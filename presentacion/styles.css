@@ -275,10 +275,9 @@ header.site-header {
 .hero-logo-box {
   position: relative;
   margin-bottom: 36px;
-  background: #ffffff;
   padding: 24px 44px;
   border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(18, 150, 138, 0.25);
+  /* box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(18, 150, 138, 0.25); */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -290,8 +289,8 @@ header.site-header {
 }
 
 .hero-logo {
-  max-width: 440px;
-  width: 100%;
+  max-width: 540px;
+  width: 150%;
   height: auto;
   display: block;
 }
@@ -747,6 +746,30 @@ footer.global-footer {
   text-align: center;
   font-weight: 700;
   font-size: 1rem;
+}
+/* ==========================================================================
+   SLIDE 3 - REDUCCIÓN DE COSTOS
+   ========================================================================== */
+
+.cost-cards {
+  align-items: stretch;
+}
+
+.cost-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cost-card-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.cost-card-text:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
