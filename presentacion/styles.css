@@ -687,11 +687,11 @@ header.site-header {
 }
 
 .footer-logo {
-  background: #ffffff;
+  /* background: #ffffff; */
   display: inline-flex;
   padding: 14px 28px;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); */
   max-height: 70px;
   width: auto;
 }
