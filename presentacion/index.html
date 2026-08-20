@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakerBridge 3D - Impresión 3D Inclusiva y Social</title>
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación Superior (Paleta Figma) -->
+  <header class="site-header">
+    <a href="#slide-1" class="brand-nav">
+      <img src="logo.png" alt="MakerBridge Logo" class="nav-logo">
+      <span>MakerBridge 3D</span>
+    </a>
+    
+    <nav class="nav-links">
+      <a href="#slide-1" class="nav-link active">Inicio</a>
+      <a href="#slide-2" class="nav-link">Visión</a>
+      <a href="#slide-4" class="nav-link">Impacto</a>
+      <a href="#slide-5" class="nav-link">Soluciones</a>
+      <a href="#slide-7" class="nav-link">Servicios</a>
+      <a href="#slide-8" class="nav-link">Flujo</a>
+      <a href="#slide-11" class="nav-link">Modelo</a>
+    </nav>
+    
+    <div class="nav-actions">
+      <a href="#slide-12" class="btn btn-orange">¡Soy Maker!</a>
+      <a href="#slide-12" class="btn btn-teal">¡Necesito un Maker!</a>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal de la Presentación -->
+  <main class="deck-container">
+
+    <!-- SLIDE 1: PORTADA & LOGO PROTAGONISTA -->
+    <section id="slide-1" class="slide-card hero-slide">
+      <span class="slide-number">01 / 12</span>
+      
+      <!-- Contenedor destacado para el logo -->
+      <div class="hero-logo-box">
+        <img src="logo.png" alt="MakerBridge 3D - 3D Printing & Web Development" class="hero-logo">
+      </div>
+
+      <div class="badge badge-orange">
+        🤝 Tecnología Asistiva e Impacto Social
+      </div>
+
+      <h1 class="hero-title">
+        MakerBridge <span class="highlight-3d">3D</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        El puente digital que convierte impresoras 3D ociosas en autonomía real para quien la necesita.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#slide-2" class="btn btn-orange">Conocer la Propuesta</a>
+        <a href="#slide-8" class="btn btn-teal">Cómo Funciona</a>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: NUESTRA VISIÓN -->
+    <section id="slide-2" class="slide-card vision-slide">
+      <span class="slide-number">02 / 12</span>
+      <div class="badge badge-orange">
+        🎯 Nuestra Visión
+      </div>
+      <h2 class="vision-title">
+        Una plataforma que arma el pedido, no solo lo recibe.
+      </h2>
+      <p class="vision-text">
+        MakerBridge toma la necesidad de autonomía de una persona o institución, la traduce en un diseño técnico imprimible y la asigna al maker o taller disponible más cercano, garantizando seguimiento de principio a fin.
+      </p>
+    </section>
+
+    <!-- SLIDE 3: REDUCCIÓN DIRECTA DE COSTOS -->
+    <section id="slide-3" class="slide-card">
+      <span class="slide-number">03 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Reducción Directa de Costos
+      </div>
+      <div class="grid-2-col">
+        <div class="stat-card">
+          <div class="stat-number">90%</div>
+          <div class="stat-label">Menos costo por pieza</div>
+        </div>
+        <div class="content-block">
+          <h3>Fabricación Local Bajo Demanda</h3>
+          <p>
+            Al descentralizar la producción y aprovechar la capacidad ociosa de impresoras 3D locales, eliminamos los enormes costos de importación y logística distante.
+          </p>
+          <p>
+            Convertimos productos asistivos costosos e inaccesibles en objetos cotidianos personalizables y fabricables en cuestión de horas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: TRIPLE IMPACTO ESTRATÉGICO -->
+    <section id="slide-4" class="slide-card">
+      <span class="slide-number">04 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Triple Impacto Estratégico
+      </div>
+      <div class="cards-grid-2">
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-orange">🧡</div>
+            <h4 class="orange-text">Impacto Social y Económico</h4>
+          </div>
+          <ul class="item-list">
+            <li>
+              <strong>Social:</strong> Brinda autonomía e inclusión inmediata mediante la creación de herramientas asistivas personalizadas para motricidad, visión y vida diaria.
+            </li>
+            <li>
+              <strong>Económico:</strong> Genera ingresos para makers y talleres locales mientras democratiza el acceso a tecnología que antes resultaba inalcanzable.
+            </li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-teal">🌱</div>
+            <h4 class="teal-text">Impacto Ambiental Sustentable</h4>
+          </div>
+          <ul class="item-list">
+            <li>
+              <strong>Producción Distribuida:</strong> Fabricación en el mismo municipio o ciudad donde se requiere la pieza, eliminando el transporte de larga distancia.
+            </li>
+            <li>
+              <strong>Cero Desperdicio:</strong> Se produce estrictamente bajo demanda, utilizando polímeros biodegradables (PLA) o reciclados.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: LÍNEAS DE SOLUCIONES ADAPTADAS -->
+    <section id="slide-5" class="slide-card">
+      <span class="slide-number">05 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Líneas de Soluciones Adaptadas
+      </div>
+      <div class="cards-grid-3">
+        <div class="solution-card">
+          <div class="solution-img-box">
+            <div class="placeholder-box">🍽️ Autonomía</div>
+          </div>
+          <div class="solution-content">
+            <h4>Autonomía Diaria</h4>
+            <p>Adaptadores ergonómicos de agarre para cubiertos, llaves, vasos y controles adaptados para videojuegos e informática.</p>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-img-box">
+            <div class="placeholder-box">🦾 Ortesis & Prótesis</div>
+          </div>
+          <div class="solution-content">
+            <h4>Independencia</h4>
+            <p>Ortosis mecánicas, prótesis ligeras de mano y herramientas impresas para facilitar la motricidad fina y vestir.</p>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-img-box">
+            <div class="placeholder-box">⠃ Braille & Relieve</div>
+          </div>
+          <div class="solution-content">
+            <h4>Educación Inclusiva</h4>
+            <p>Material didáctico táctil en sistema Braille, mapas en relieve y recursos pedagógicos para escuelas y hogares.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: PROCESO FLEXIBLE SEGÚN EL CLIENTE -->
+    <section id="slide-6" class="slide-card">
+      <span class="slide-number">06 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Proceso Flexible según el Cliente
+      </div>
+      <div class="grid-2-col">
+        <div class="content-block">
+          <ul class="item-list">
+            <li>
+              <strong class="highlight-orange">📦 Cliente con Modelo 3D:</strong><br>
+              Sube su archivo STL, indica cantidad, material (PLA/PETG), color y fecha límite para recibir cotizaciones inmediatas.
+            </li>
+            <li>
+              <strong class="highlight-teal">🧩 Cliente sin Modelo (Necesidad desde cero):</strong><br>
+              Sube fotografías, medidas y descripción del problema. Diseñadores especializados en la red modelan la pieza adaptada a sus requerimientos.
+            </li>
+            <li>
+              <strong class="highlight-white">📍 Asignación Inteligente:</strong><br>
+              Filtrado de proveedores por cercanía geográfica, tecnología disponible y reputación comunitaria verificada.
+            </li>
+          </ul>
+        </div>
+        <div class="stat-card flex-center-card">
+          <div class="icon-huge">⚙️</div>
+          <div class="card-subtitle-bold">Modelado a Medida</div>
+          <div class="card-caption">De la idea al objeto físico funcional</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: SERVICIOS QUE OFRECE LA RED -->
+    <section id="slide-7" class="slide-card">
+      <span class="slide-number">07 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Servicios que Ofrece la Red
+      </div>
+      <div class="cards-grid-3">
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-orange">🖨️</div>
+            <h4>Solo Impresión 3D</h4>
+          </div>
+          <p class="card-desc">
+            Makers con capacidad instalada que reciben el archivo técnico verificado y fabrican la pieza con precisión y calidad garantizada.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-teal">📐</div>
+            <h4>Diseño + Impresión</h4>
+          </div>
+          <p class="card-desc">
+            Servicio integral donde el profesional toma la medida antropométrica o del objeto, diseña en 3D CAD y entrega el producto final listo para usar.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-orange">✏️</div>
+            <h4>Solo Modelado 3D</h4>
+          </div>
+          <p class="card-desc">
+            Diseñadores que adaptan o crean el archivo STL paramétrico de acceso libre o personalizado para que sea impreso en cualquier nodo de la red.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: FLUJO DE TRABAJO INTEGRADO -->
+    <section id="slide-8" class="slide-card">
+      <span class="slide-number">08 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Flujo de Trabajo Integrado
+      </div>
+      <div class="timeline-steps">
+        <div class="step-node">
+          <div class="step-circle">📋</div>
+          <div class="step-title">1. Solicitud</div>
+          <div class="step-desc">El usuario describe la necesidad adaptativa con o sin modelo STL.</div>
+        </div>
+        <div class="step-node">
+          <div class="step-circle">💬</div>
+          <div class="step-title">2. Cotización</div>
+          <div class="step-desc">Makers cercanos postulan propuestas con costos y plazos claros.</div>
+        </div>
+        <div class="step-node">
+          <div class="step-circle">⚙️</div>
+          <div class="step-title">3. Fabricación</div>
+          <div class="step-desc">Producción local con actualización de estado en tiempo real.</div>
+        </div>
+        <div class="step-node">
+          <div class="step-circle">❤️</div>
+          <div class="step-title">4. Entrega y Valoración</div>
+          <div class="step-desc">Recepción del producto, prueba de uso y calificación del maker.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: ARQUITECTURA DE LA PLATAFORMA -->
+    <section id="slide-9" class="slide-card">
+      <span class="slide-number">09 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Arquitectura de la Plataforma
+      </div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Perfil</th>
+            <th style="width: 40%;">Módulos Principales</th>
+            <th style="width: 35%;">Beneficio Clave</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="role-pill">👤 Cliente / Entidad</div></td>
+            <td>Dashboard, Nueva Solicitud, Cotizaciones, Mis Pedidos, Chat Directo.</td>
+            <td>Soluciones personalizadas a bajo costo y con entrega rápida.</td>
+          </tr>
+          <tr>
+            <td><div class="role-pill">🖨️ Maker / Taller</div></td>
+            <td>Solicitudes Disponibles, Mis Propuestas, Mis Impresoras, Gestión de Pedidos.</td>
+            <td>Monetización de capacidad ociosa e impacto en su comunidad.</td>
+          </tr>
+          <tr>
+            <td><div class="role-pill">📐 Diseñador 3D</div></td>
+            <td>Banco de Diseños Asistivos, Solicitudes de Modelado, Licenciamiento.</td>
+            <td>Poner el talento de ingeniería al servicio de causas sociales.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SLIDE 10: ECOSISTEMA TECNOLÓGICO -->
+    <section id="slide-10" class="slide-card">
+      <span class="slide-number">10 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Ecosistema Tecnológico
+      </div>
+      <div class="grid-2-col">
+        <div class="content-block">
+          <h3 class="orange-text mb-16">Garantía de Calidad y Trazabilidad</h3>
+          <p>
+            MakerBridge no actúa como un directorio pasivo. Asiste activamente en la selección de materiales apropiados (biocompatibilidad, resistencia mecánica o flexibilidad TPU).
+          </p>
+          <p>
+            Monitoreamos el progreso desde la primera capa impresa hasta la prueba final de usabilidad del dispositivo asistivo.
+          </p>
+        </div>
+        <div class="feature-card border-left-teal">
+          <h4 class="text-white mb-12">🔬 Criterios Técnicos Verificados</h4>
+          <ul class="item-list">
+            <li><strong>Biocompatibilidad:</strong> Validación de filamentos para contacto seguro con piel.</li>
+            <li><strong>Parámetros de Impresión:</strong> Relleno estructural, orientación de capas y tolerancias.</li>
+            <li><strong>Validación Funcional:</strong> Feedback directo de ergonomía y respuesta mecánica.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: MODELO DE NEGOCIO SOSTENIBLE -->
+    <section id="slide-11" class="slide-card">
+      <span class="slide-number">11 / 12</span>
+      <div class="section-header-title">
+        <div class="indicator"></div>
+        Modelo de Negocio Sostenible
+      </div>
+      <div class="cards-grid-2">
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-orange">💳</div>
+            <h4 class="orange-text">Comisión por Transacción</h4>
+          </div>
+          <ul class="item-list">
+            <li>
+              <strong>Modelo Transaccional:</strong> Se cobra un porcentaje transparente sobre cada trabajo concretado con éxito.
+            </li>
+            <li>
+              <strong>Seguridad y Garantía:</strong> Garantiza protección al pago del cliente e incentiva el cumplimiento de tiempos por parte del maker.
+            </li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="card-header-with-icon">
+            <div class="icon-circle icon-teal">👑</div>
+            <h4 class="teal-text">Planes Maker / Taller</h4>
+          </div>
+          <ul class="item-list">
+            <li>
+              <strong>Plan Gratuito:</strong> Perfil público y hasta 5 propuestas mensuales para emprendedores que inician.
+            </li>
+            <li>
+              <strong>Plan Premium:</strong> Cotizaciones ilimitadas, mayor visibilidad geográfica, insignias de verificación y analíticas avanzadas.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: CIERRE & CONTACTO -->
+    <section id="slide-12" class="slide-card footer-slide">
+      <span class="slide-number">12 / 12</span>
+      
+      <div class="footer-logo-wrapper">
+        <img src="logo.png" alt="MakerBridge Logo" class="footer-logo">
+      </div>
+
+      <div class="badge badge-orange">
+        🚀 Uniendo Capacidades con Necesidades
+      </div>
+
+      <h2 class="footer-title">
+        Construyamos Autonomía Juntos
+      </h2>
+
+      <p class="footer-desc">
+        MakerBridge: La red social e inclusiva de fabricación 3D distribuida.
+      </p>
+
+      <div class="footer-contact-bar">
+        <a href="https://www.makerbridge3d.com" target="_blank" class="footer-contact-item">
+          🌐 www.makerbridge3d.com
+        </a>
+        <span class="divider">|</span>
+        <a href="mailto:contacto@makerbridge3d.com" class="footer-contact-item">
+          ✉️ contacto@makerbridge3d.com
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de página global -->
+  <footer class="global-footer">
+    MakerBridge 3D &copy; 2026 &mdash; Impresión 3D Inclusiva y Social
+  </footer>
+
+  <!-- Script interactivo -->
+  <script src="script.js"></script>
+</body>
+</html>
