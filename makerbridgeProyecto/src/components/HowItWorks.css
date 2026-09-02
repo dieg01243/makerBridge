@@ -1,0 +1,11 @@
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 760px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
