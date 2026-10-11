@@ -6,9 +6,9 @@ const steps = [
     n: '01',
     title: 'Subí o solicitá tu modelo',
     text: 'Cargá tu archivo .STL, .OBJ o .STEP, o contratá a un diseñador si solo tenés un plano o boceto inicial.',
-    hover: 'hover:border-teal-400',
-    iconBox: 'bg-teal-50 text-teal-600',
-    label: 'text-teal-700',
+    hover: 'hover:border-brand-primary',
+    iconBox: 'bg-brand-lightBg text-brand-primary',
+    label: 'text-brand-primary',
     icon: (
       <>
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

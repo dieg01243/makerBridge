@@ -1,8 +1,7 @@
 const navLinks = [
   { label: 'Explorar Productos' },
-  { label: 'Servicios', dot: true },
+  { label: 'Servicios'},
   { label: 'Cómo Funciona' },
-  { label: 'Comunidad' },
 ]
 
 export default function Header() {
@@ -24,7 +23,7 @@ export default function Header() {
           </div>
         </a>
 
-        {/* Main Navigation Menu */}
+        {/* Menu de navegacion principal-Paginas publicas */}
         <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-1 lg:gap-2">
           <a
             href="#"
@@ -33,15 +32,12 @@ export default function Header() {
           >
             Home
           </a>
-          {navLinks.map(({ label, dot }) => (
+          {navLinks.map(({ label}) => (
             <a
               key={label}
               href="#"
-              className={`px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-black/5 rounded-lg transition-colors ${
-                dot ? 'flex items-center gap-1.5' : ''
-              }`}
+              className={`px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-black/5 rounded-lg transition-colors`}
             >
-              {dot && <span className="w-1.5 h-1.5 rounded-full bg-[#e06d53]" />}
               {label}
             </a>
           ))}
@@ -51,7 +47,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="px-5 py-2.5 text-sm font-semibold text-[#e06d53] hover:text-[#cc593f] border border-[#e06d53]/40 hover:border-[#e06d53] rounded-xl hover:bg-[#e06d53]/5 transition duration-150"
+            className="px-5 py-2.5 font-semibold bg-[#e06d53] hover:bg-[#cc593f] text-white shadow-lg shadow-[#e06d53]/25 hover:shadow-xl hover:shadow-[#e06d53]/35 rounded-xl transition duration-150"
           >
             Ingresar
           </button>

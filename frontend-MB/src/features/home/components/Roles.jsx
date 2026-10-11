@@ -53,22 +53,22 @@ const roles = [
 
 export default function Roles() {
   return (
-    <section aria-labelledby="roles-title" className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section aria-labelledby="roles-title" className="py-12 lg:py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 id="roles-title" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          ¿Qué rol tomás?
+          ¿Qué rol querés tomar?
         </h2>
         <p className="mt-3 text-base sm:text-lg text-slate-600">
           MakerBridge <strong className="text-[#e06d53] font-semibold">conecta</strong> a quienes imprimen con quienes lo necesitan. Elegí tu lado y comenzá en minutos.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
         {roles.map((role) => (
           <div
             key={role.id}
             data-purpose={`role-card-${role.id}`}
-            className={`relative bg-white rounded-3xl p-8 lg:p-10 border border-slate-200 shadow-warm-md flex flex-col justify-between transition duration-300 ${role.cardHover}`}
+            className={`relative bg-white rounded-3xl p-8 lg:p-10 border border-slate-200 shadow-warm-md flex flex-col justify-between transition duration-300 ${role.cardHover} `}
           >
             <div className="space-y-5">
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold ${role.iconBox}`}>

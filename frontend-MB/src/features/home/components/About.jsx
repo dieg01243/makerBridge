@@ -1,3 +1,5 @@
+import aboutImg from "../assets/images.jpeg";
+
 const metrics = [
   { value: '+1.200', label: 'Makers verificados', color: 'text-[#e06d53]' },
   { value: '+15.000', label: 'Piezas fabricadas', color: 'text-slate-900' },
@@ -17,7 +19,7 @@ export default function About() {
               Sobre nosotros
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              En <strong className="text-slate-900">MakerBridge</strong> conectamos la capacidad productiva ociosa de talleres de manufactura digital con inventores, ingenieros, pymes y creadores que buscan producir localmente sin costos de importación ni cantidades mínimas prohibitivas.
+              En <strong className="text-slate-900">MakerBridge</strong> conectamos la capacidad productiva ociosa de talleres de impresión 3D con inventores, creadores, pymes y usuarios que buscan producir localmente sin costos de importación ni cantidades mínimas prohibitivas.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Creemos en una red descentralizada, transparente y con garantía total: tus pagos quedan resguardados hasta que recibís tu pieza y confirmás que cumple con los estándares dimensionales requeridos.
@@ -31,32 +33,12 @@ export default function About() {
               ))}
             </div>
           </div>
-
-          {/* Benchy quiz callout */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-amber-50 to-orange-50/50 rounded-2xl p-6 sm:p-7 border border-amber-200/80 shadow-sm">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-xl bg-amber-400 flex items-center justify-center text-white shadow-sm font-black text-xl">
-                🚢
-              </div>
-              <div>
-                <span className="inline-block text-[11px] font-extrabold text-amber-800 tracking-wide uppercase">
-                  ¡HOLA! SOY BENCHY, TU GUÍA 3D
-                </span>
-                <h4 className="text-base font-bold text-slate-900 leading-snug">¿No sabés qué tecnología usar?</h4>
-              </div>
-            </div>
-            <p className="text-xs text-slate-600 leading-relaxed mb-5">
-              Respondé 2 preguntas rápidas de 30 segundos sobre tus piezas o tu idea y te derivamos directo con el maker o diseñador ideal para vos.
-            </p>
-            <button
-              type="button"
-              className="w-full py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition"
-            >
-              Iniciar Quiz Rápido
-              <svg className="w-4 h-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
+          <div className="lg:col-span-5 bg-gradient-to-br from-amber-50 to-orange-50/50 rounded-2xl  border border-amber-200/80 shadow-sm">
+            <img
+              src={aboutImg}
+              alt="Sobre nosotros"
+              className="w-full h-auto rounded-xl object-cover"
+            />
           </div>
         </div>
       </div>

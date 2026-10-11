@@ -54,8 +54,6 @@ const works = [
   },
 ]
 
-const filters = ['Todos', 'Ingeniería', 'Diseño']
-
 export default function FeaturedWorks() {
   return (
     <section aria-labelledby="featured-works-title" className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -65,19 +63,6 @@ export default function FeaturedWorks() {
             Trabajos destacados
           </h2>
           <p className="text-sm text-slate-600 mt-1">Explorá proyectos reales fabricados por nuestra comunidad de creadores.</p>
-        </div>
-        <div className="flex items-center gap-2">
-          {filters.map((f, i) => (
-            <a
-              key={f}
-              href="#"
-              className={`text-xs hover:text-slate-900 bg-white border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm text-slate-600 ${
-                i === 0 ? 'font-bold' : 'font-medium'
-              }`}
-            >
-              {f}
-            </a>
-          ))}
         </div>
       </div>
 
@@ -112,12 +97,12 @@ export default function FeaturedWorks() {
                 </div>
               </div>
             </div>
-            <button
+            {/* <button
               type="button"
               className={`mt-6 w-full py-2.5 px-4 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs transition duration-150 text-center ${w.buttonHover}`}
             >
               Ver detalles de fabricación
-            </button>
+            </button> */}
           </article>
         ))}
       </div>
