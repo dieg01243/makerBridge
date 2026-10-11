@@ -1,11 +1,6 @@
-import Home from './features/home/pages/Home'
-import BenchyWidget from './components/common/BenchyWidget'
+import { RouterProvider } from 'react-router-dom'
+import router from './router'
 
 export default function App() {
-  return (
-    <>
-      <Home />
-      <BenchyWidget />
-    </>
-  )
+  return <RouterProvider router={router} />
 }
