@@ -18,7 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from api.views import hola
 
+# urlpatterns = [
+#     path("admin/", admin.site.urls),
+#     path("api/hola/", hola),
+# ]
+
+from django.urls import path, include
+
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/hola/", hola),
+    path("api/", include("plataforma.urls")),
 ]
