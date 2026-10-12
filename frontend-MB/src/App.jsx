@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Solicitudes from "./VistaCliente/Solicitudes.jsx";
 
 const MAKERS = [
   { name: "Bruce Banner", role: "Impresión en resina · Córdoba" },
@@ -491,6 +492,8 @@ export default function MakerbridgeLanding() {
         </div>
       </section>
 
+      {/* <Solicitudes/> */}
+
       <section className="section" id="como-funciona">
         <h2>¿Cómo funciona MakerBridge con tu archivo 3D?</h2>
         <div className="dimension-line">
@@ -529,8 +532,8 @@ export default function MakerbridgeLanding() {
           </div>
         </div>
       </section>
-
-      {/* <Solicitudes/> */}
+      
+      <Solicitudes />
 
       <footer>
         <div className="wrap" style={{ padding: "0 20px" }}>

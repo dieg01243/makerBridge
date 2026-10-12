@@ -1,15 +1,20 @@
 import'./Solicitudes.css'
+import { detallePedidos } from './DetallePedidos'
 
-function Solicitudes() {
-
+function Solicitudes(props) {
 
   return(
     <div className='Solicitudes'>
       <div className='pedidos'>
         <h2>Mis solicitudes</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas numquam repellendus vitae consectetur temporibus, voluptatum dolore odio eveniet maiores blanditiis facere recusandae! Illum dolore eveniet incidunt dicta molestias reiciendis aliquid?
-        </p>
+        <detallePedidos />
+        
+
+
+
+        
+        <button class="btn-primary">Consultas</button>
+        
       </div>
     </div>
   )
