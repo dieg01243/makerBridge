@@ -423,6 +423,8 @@ export default function MakerbridgeLanding() {
         </div>
       </nav>
 
+      
+
       <section className="hero">
         <div>
           <h1>MakerBridge conecta con <span className="accent">clientes y proveedores</span> en un solo lugar</h1>
@@ -527,6 +529,8 @@ export default function MakerbridgeLanding() {
           </div>
         </div>
       </section>
+
+      {/* <Solicitudes/> */}
 
       <footer>
         <div className="wrap" style={{ padding: "0 20px" }}>

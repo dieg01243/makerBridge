@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import Solicitudes from './VistaCliente/Solicitudes.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -9,8 +10,8 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 
-createRoot(document.getElementById('misSolicitudes')).render(
+createRoot(document.getElementById('Solicitudes')).render(
   <StrictMode>
-    <StatusBadge />
+    <Solicitudes />
   </StrictMode>,
 )
