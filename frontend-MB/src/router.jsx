@@ -4,9 +4,11 @@ import RootLayout from './components/common/RootLayout'
 /* --------------------------Rutas de públicas -------------------------*/
 import PublicLayout from './features/public/layout/PublicLayout.jsx' /* Plantilla que comparten las paginas publicas */
 import Home from './features/public/pages/Home'
-/* import Servicios from './features/public/pages/Servicios'
+import ServiciosPage from './features/public/pages/ServiciosPage.jsx'
+/* 
 import ComoFunciona from './features/public/pages/ComoFunciona'
-import ExplorarProductos from './features/public/pages/ExplorarProductos' */
+import ExplorarProductos from './features/public/pages/ExplorarProductos'
+*/
 /* --------------------------Rutas de autenticación -------------------------*/
 /* import AuthLayout from './features/auth/layout/AuthLayout' */  /* Plantilla que comparten las paginas de autenticacion */
 /* import Login from './features/auth/pages/Login'
@@ -21,8 +23,8 @@ const router = createBrowserRouter([
         element: <PublicLayout />,     // Navbar + Footer del PublicLayout
         children: [
           { path: '/', element: <Home /> },
-          /* { path: '/servicios', element: <Servicios /> },
-          { path: '/como-funciona', element: <ComoFunciona /> },
+          { path: '/servicios', element: <ServiciosPage /> },
+          /* { path: '/como-funciona', element: <ComoFunciona /> },
           { path: '/explorarProductos', element: <ExplorarProductos /> }, */
         ],
       },
