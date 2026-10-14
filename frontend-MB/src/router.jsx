@@ -11,8 +11,8 @@ import ExplorarProductos from './features/public/pages/ExplorarProductos'
 */
 /* --------------------------Rutas de autenticación -------------------------*/
 /* import AuthLayout from './features/auth/layout/AuthLayout' */  /* Plantilla que comparten las paginas de autenticacion */
-/* import Login from './features/auth/pages/Login'
-import Register from './features/auth/pages/Register' */
+import Login from './features/auth/pages/Login'
+/* import Register from './features/auth/pages/Register' */
 
 const router = createBrowserRouter([
   {
@@ -29,14 +29,14 @@ const router = createBrowserRouter([
         ],
       },
 
-      /* {
-        element: <AuthLayout />,       // Navbar minimalista + footer del AuthLayout
+       {
+        element: <PublicLayout /> /*  <AuthLayout /> */,       // Navbar minimalista + footer del AuthLayout
         children: [
           { path: '/login', element: <Login /> },
           { path: '/registro', element: <Register /> },
         ],
       },
-
+/* 
       {
         path: '/cliente',
         element: (
