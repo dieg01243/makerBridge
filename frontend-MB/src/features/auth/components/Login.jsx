@@ -32,7 +32,7 @@ const GoogleIcon = () => (
   </svg>
 );
 
-export default function Login({ onSubmit, onGoogle }) {
+export default function Login({ onSubmit, onGoogle , error, loading }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -101,7 +101,11 @@ export default function Login({ onSubmit, onGoogle }) {
             </button>
           </div>
 
-          <button type="submit" className="btn btn-primary">Ingresar</button>
+          
+          {error && <p className="login-error" role="alert">{error}</p>}
+          <button type="submit" className="btn btn-primary" disabled={loading}>
+            {loading ? "Ingresando..." : "Ingresar"}
+          </button>
         </form>
 
         <div className="links">

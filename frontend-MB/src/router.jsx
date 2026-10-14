@@ -11,6 +11,7 @@ import ExplorarProductos from './features/public/pages/ExplorarProductos'
 */
 /* --------------------------Rutas de autenticación -------------------------*/
 /* import AuthLayout from './features/auth/layout/AuthLayout' */  /* Plantilla que comparten las paginas de autenticacion */
+import RutaProtegida from './features/auth/RutaProtegida'
 import Login from './features/auth/pages/LoginPage'
 /* import Register from './features/auth/pages/Register' */
 
@@ -36,26 +37,26 @@ const router = createBrowserRouter([
           /* { path: '/registro', element: <Register /> }, */
         ],
       },
-/* 
+
       {
         path: '/cliente',
         element: (
-          <ProtectedRoute rolesPermitidos={['cliente']}>
-            <ClienteLayout />
-          </ProtectedRoute>
+          <RutaProtegida rol={['cliente']}>
+           {/*  <ClienteLayout /> */}
+          </RutaProtegida>
         ),
-        children: [{ index: true, element: <ClienteHome /> }],
+        /* children: [{ index: true, element: <ClienteHome /> }], */
       },
 
       {
         path: '/maker',
         element: (
-          <ProtectedRoute rolesPermitidos={['maker']}>
-            <MakerLayout />
-          </ProtectedRoute>
+          <RutaProtegida rol={['maker']}>
+           {/*  <MakerLayout /> */}
+          </RutaProtegida>
         ),
-        children: [{ index: true, element: <MakerHome /> }],
-      }, */
+        /* children: [{ index: true, element: <MakerHome /> }], */
+      },
     ],
   },
 ])
