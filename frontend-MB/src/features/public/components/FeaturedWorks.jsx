@@ -12,13 +12,13 @@ const works = [
     maker: 'Taller de Lucas (Córdoba)',
     material: 'PETG Técnico reforzado',
     delivery: '48 horas hábiles',
-    buttonHover: 'hover:border-[#e06d53] hover:text-[#e06d53]',
+    buttonHover: 'hover:border-brand-primary hover:text-brand-primary',
     icon: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />,
   },
   {
     id: 2,
     tag: 'Engranajes SLA',
-    gradient: 'from-[#eab308] to-[#f59e0b]',
+    gradient: 'from-[#eab308] to-brand-accentYellow',
     spec: 'Acabado suave 25µm',
     title: 'Corona Helicoidal Pro',
     price: '$ 20.000',
@@ -73,7 +73,7 @@ export default function FeaturedWorks() {
             className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between"
           >
             <div>
-              <div className={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-tr ${w.gradient} p-6 flex flex-col justify-between text-white shadow-inner relative overflow-hidden`}>
+              <div className={`w-full aspect-4/3 rounded-2xl bg-linear-to-tr ${w.gradient} p-6 flex flex-col justify-between text-white shadow-inner relative overflow-hidden`}>
                 <span className="bg-white/20 backdrop-blur-md text-[11px] font-bold px-2.5 py-1 rounded-md self-start uppercase tracking-wider">
                   {w.tag}
                 </span>

@@ -10,13 +10,13 @@ const navLinks = [
 const navLinkClasses = ({ isActive }) =>
   `px-3.5 py-2 text-sm rounded-lg transition-colors relative ${
     isActive
-      ? "font-semibold text-[#e06d53] after:content-[''] after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#e06d53]"
+      ? "font-semibold text-brand-primary after:content-[''] after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-brand-primary"
       : 'font-medium text-slate-600 hover:text-slate-900 hover:bg-black/5'
   }`
 
 const mobileNavLinkClasses = ({ isActive }) =>
   `px-3.5 py-2.5 text-sm rounded-lg transition-colors ${
-    isActive ? 'font-semibold text-[#e06d53]' : 'font-medium text-slate-600 hover:bg-black/5'
+    isActive ? 'font-semibold text-brand-primary' : 'font-medium text-slate-600 hover:bg-black/5'
   }`
 
 export default function Header() {
@@ -29,10 +29,10 @@ export default function Header() {
         <Link
           to="/"
           aria-label="MakerBridge Inicio"
-          className="flex items-center gap-3 group focus:outline-none"
+          className="flex items-center gap-3 group focus:outline-hidden"
           onClick={() => setMenuAbierto(false)}
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#e06d53] to-[#f48f76] flex items-center justify-center text-white shadow-md shadow-[#e06d53]/20 group-hover:scale-105 transition-transform duration-200">
+          <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-brand-primary to-[#f48f76] flex items-center justify-center text-white shadow-md shadow-brand-primary/20 group-hover:scale-105 transition-transform duration-200">
             <svg className="w-6 h-6 stroke-current fill-none stroke-2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
               <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
@@ -41,7 +41,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">MakerBridge</span>
-            <span className="text-[10px] uppercase font-bold tracking-widest text-[#e06d53]">3D Printing Network</span>
+            <span className="text-[10px] uppercase font-bold tracking-widest text-brand-primary">3D Printing Network</span>
           </div>
         </Link>
 
@@ -61,7 +61,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             to="/login"
-            className="hidden sm:inline-flex px-5 py-2.5 font-semibold bg-[#e06d53] hover:bg-[#cc593f] text-white shadow-lg shadow-[#e06d53]/25 hover:shadow-xl hover:shadow-[#e06d53]/35 rounded-xl transition duration-150"
+            className="hidden sm:inline-flex px-5 py-2.5 font-semibold bg-brand-primary hover:bg-brand-primaryHover text-white shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/35 rounded-xl transition duration-150"
           >
             Ingresar
           </Link>
@@ -107,7 +107,7 @@ export default function Header() {
           <Link
             to="/login"
             onClick={() => setMenuAbierto(false)}
-            className="mt-2 w-full text-center px-5 py-2.5 font-semibold bg-[#e06d53] hover:bg-[#cc593f] text-white rounded-xl transition duration-150"
+            className="mt-2 w-full text-center px-5 py-2.5 font-semibold bg-brand-primary hover:bg-brand-primaryHover text-white rounded-xl transition duration-150"
           >
             Ingresar
           </Link>

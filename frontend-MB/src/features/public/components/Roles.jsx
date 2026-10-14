@@ -10,8 +10,8 @@ const roles = [
     id: 'maker',
     title: 'Soy Maker',
     description: 'Tengo una impresora 3D y quiero ofrecer mis servicios de manufactura y diseño.',
-    cardHover: 'hover:border-[#e06d53]/40',
-    iconBox: 'bg-[#e06d53]/10 text-[#e06d53]',
+    cardHover: 'hover:border-brand-primary/40',
+    iconBox: 'bg-brand-primary/10 text-brand-primary',
     icon: (
       <>
         <rect height="14" rx="2" ry="2" width="20" x="2" y="7" />
@@ -26,7 +26,7 @@ const roles = [
     ],
     button: 'Registrarme como Maker',
     buttonClass:
-      'bg-[#e06d53] hover:bg-[#cc593f] text-white shadow-lg shadow-[#e06d53]/25 hover:shadow-xl hover:shadow-[#e06d53]/35',
+      'bg-brand-primary hover:bg-brand-primaryHover text-white shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/35',
   },
   {
     id: 'client',
@@ -59,7 +59,7 @@ export default function Roles() {
           ¿Qué rol querés tomar?
         </h2>
         <p className="mt-3 text-base sm:text-lg text-slate-600">
-          MakerBridge <strong className="text-[#e06d53] font-semibold">conecta</strong> a quienes imprimen con quienes lo necesitan. Elegí tu lado y comenzá en minutos.
+          MakerBridge <strong className="text-brand-primary font-semibold">conecta</strong> a quienes imprimen con quienes lo necesitan. Elegí tu lado y comenzá en minutos.
         </p>
       </div>
 

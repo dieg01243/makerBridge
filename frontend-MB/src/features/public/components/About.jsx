@@ -1,7 +1,7 @@
 import aboutImg from "../assets/images.jpeg";
 
 const metrics = [
-  { value: '+1.200', label: 'Makers verificados', color: 'text-[#e06d53]' },
+  { value: '+1.200', label: 'Makers verificados', color: 'text-brand-primary' },
   { value: '+15.000', label: 'Piezas fabricadas', color: 'text-slate-900' },
   { value: '99.4%', label: 'Entregas a tiempo', color: 'text-emerald-600' },
 ]
@@ -33,7 +33,7 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-5 bg-gradient-to-br from-amber-50 to-orange-50/50 rounded-2xl  border border-amber-200/80 shadow-sm">
+          <div className="lg:col-span-5 bg-linear-to-br from-amber-50 to-orange-50/50 rounded-2xl  border border-amber-200/80 shadow-sm">
             <img
               src={aboutImg}
               alt="Sobre nosotros"

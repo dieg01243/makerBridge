@@ -4,10 +4,10 @@ import Footer from '../components/Footer'
 
 export default function PublicLayout() {
   return (
-    <div className="min-h-screen text-slate-800 antialiased flex flex-col justify-between selection:bg-[#e06d53]/20 selection:text-[#e06d53]">
+    <div className="min-h-screen text-slate-800 antialiased flex flex-col justify-between selection:bg-brand-primary/20 selection:text-brand-primary">
 
       <Header />
-      <main className="flex-grow">
+      <main className="grow">
         <Outlet />   {/* acá inyectamos Home, Servicios, ComoFunciona o Explorar Productos según la URL */}
       </main>
       <Footer />

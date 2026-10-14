@@ -94,7 +94,7 @@ export default function Footer() {
                 <li key={link}>
                   <a
                     href="#"
-                    className="hover:text-[#e06d53] transition-colors"
+                    className="hover:text-brand-primary transition-colors"
                   >
                     {link}
                   </a>
@@ -112,7 +112,7 @@ export default function Footer() {
               <p className="font-semibold text-slate-800">
                 <a
                   href="mailto:makerbridge@gmail.com"
-                  className="hover:text-[#e06d53] transition-colors"
+                  className="hover:text-brand-primary transition-colors"
                 >
                   makerbridge@gmail.com
                 </a>

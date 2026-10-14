@@ -13,7 +13,7 @@ const SLIDES = [
   // { src: banner3, alt: "..." },
 ];
 
-const ASPECT = "aspect-[16/5]"; // proporción real de los banners
+const ASPECT = "aspect-16/5"; // proporción real de los banners
 const AUTOPLAY_MS = 4000;
 
 /* -------------------------------------------------------------------------------------- */
@@ -56,7 +56,7 @@ export default function FeaturedMaker() {
               src={slide.src}
               alt={slide.alt}
               aria-hidden={i !== current}
-              className="w-full h-full flex-shrink-0 object-cover object-center"
+              className="w-full h-full shrink-0 object-cover object-center"
             />
           ))}
         </div>
@@ -95,7 +95,7 @@ export default function FeaturedMaker() {
                 aria-label={`Ir al banner ${i + 1}`}
                 aria-current={i === current}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-6 bg-[#e06d53]" : "w-2 bg-white/70 hover:bg-white"
+                  i === current ? "w-6 bg-brand-primary" : "w-2 bg-white/70 hover:bg-white"
                 }`}
               />
             ))}
