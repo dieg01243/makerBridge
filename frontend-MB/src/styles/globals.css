@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@theme {
+  --font-mono: "Space Grotesk", monospace;
+}
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/container-queries';
