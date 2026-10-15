@@ -1,0 +1,17 @@
+.perfil-privado-page {
+  min-height: 100vh;
+  width: 100%;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.perfil-privado-page h1,
+.perfil-privado-page h2,
+.perfil-privado-page h3 {
+  margin: 0;
+}
+
+.perfil-privado-page p {
+  margin: 0;
+}
+
