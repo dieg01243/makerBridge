@@ -4,11 +4,11 @@ import './MisSolicitudes.css'
 function Solicitudes(props) {
   // const pedidos {props} = pedidos.props
   return (
-    <ClienteLayout
+   /*  <ClienteLayout
       title="Mis solicitudes"
       accent=""
       description="Consultá el estado y los detalles de tus solicitudes de fabricación."
-    >
+    > */
       <div className='Solicitudes'>
         <div className='pedidos'>
         {/* Comienzo tarjeta */}
@@ -34,7 +34,7 @@ function Solicitudes(props) {
         <button className="btn-primary">Consultas</button>
         </div>
       </div>
-    </ClienteLayout>
+    // </ClienteLayout>
   )
 }
 

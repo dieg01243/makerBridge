@@ -20,6 +20,7 @@ import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 
 /* --------------------------Rutas del cliente -------------------------*/
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
+import Solicitudes from './features/Cliente/Paginas/MisSolicitudes.jsx'
 
 
 const router = createBrowserRouter([
@@ -60,13 +61,13 @@ const router = createBrowserRouter([
           /* children: [{ index: true, element: <ExplorarPedidos /> }], */
         }]
         : []),
-      /* ...(import.meta.env.DEV
+      ...(import.meta.env.DEV
         ? [{
-          path: '/dev/cliente',
-          element: <MisSolicitudes />, */ /* <MakerLayout /> */
+          path: '/dev/missolicitudes',
+          element: <Solicitudes />, /* <MakerLayout /> */
           /* children: [{ index: true, element: <ExplorarPedidos /> }], */
-        /* }]
-        : []), */
+        }]
+        : []),
       {
         path: '/maker',
         element: (
