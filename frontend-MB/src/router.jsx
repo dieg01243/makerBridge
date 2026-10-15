@@ -18,6 +18,7 @@ import Login from './features/auth/pages/LoginPage'
 import MakerLayout from './features/maker/layout/MakerLayout'
 import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 
+import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 const router = createBrowserRouter([
   {
     element: <RootLayout />,          // Benchy fijo en TODO (habria que ver si es lo suficientemente seguro)
@@ -40,17 +41,22 @@ const router = createBrowserRouter([
           /* { path: '/registro', element: <Register /> }, */
         ],
       },
-
       {
         path: '/cliente',
         element: (
           <RutaProtegida rol={['cliente']}>
-            {/*  <ClienteLayout /> */}
+            {/* <ClienteLayout /> */}
           </RutaProtegida>
         ),
         /* children: [{ index: true, element: <ClienteHome /> }], */
       },
-
+      ...(import.meta.env.DEV
+        ? [{
+          path: '/dev/cliente',
+          element: <PerfilPrivado />, /* <MakerLayout /> */
+          /* children: [{ index: true, element: <ExplorarPedidos /> }], */
+        }]
+        : []),
       {
         path: '/maker',
         element: (
