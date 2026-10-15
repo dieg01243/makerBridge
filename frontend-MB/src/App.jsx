@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PerfilPrivado from "./Cliente/Paginas/PerfilPrivado.jsx";
 
 const MAKERS = [
   { name: "Bruce Banner", role: "Impresión en resina · Córdoba" },
@@ -79,7 +81,7 @@ function CornerMarks({ corners }) {
   );
 }
 
-export default function MakerbridgeLanding() {
+function MakerbridgeLanding() {
   const [makerIndex, setMakerIndex] = useState(0);
   const maker = MAKERS[makerIndex];
 
@@ -579,5 +581,17 @@ export default function MakerbridgeLanding() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MakerbridgeLanding />} />
+        <Route path="/perfil" element={<PerfilPrivado />} />
+        <Route path="*" element={<MakerbridgeLanding />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
