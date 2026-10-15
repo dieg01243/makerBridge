@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import DatosPersonales from '../Componentes/DatosPersonales.jsx';
 import DatosUsuario from '../Componentes/DatosUsuarios.jsx';
-import Footer from '../Componentes/Footer.jsx';
 import FotoDePerfil from '../Componentes/FotoDePerfil.jsx';
-import Header from '../Componentes/Header.jsx';
-import Navbar from '../Componentes/Navbar.jsx';
+import ClienteLayout from '../layout/ClienteLayout.jsx';
 import './PerfilPrivado.css';
 
 const USER = {
@@ -31,12 +29,13 @@ function PerfilPrivado() {
   const [avisoGuardado, setAvisoGuardado] = useState(false);
 
   return (
-    <div className="perfil-privado-page min-h-screen bg-brand-crema text-brand-dark">
-      <Navbar user={USER} />
-
-      <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-        <Header />
-
+    <div className="perfil-privado-page">
+      <ClienteLayout
+        user={USER}
+        title="Mi"
+        accent="perfil"
+        description="En esta sección vas a poder modificar tus datos personales. ¡Cualquier consulta estamos para ayudarte!"
+      >
         {avisoGuardado && (
           <p
             className="mb-6 rounded-2xl border border-brand-border-subtle bg-white px-5 py-4 text-sm font-medium text-brand-dark-muted shadow-card"
@@ -60,9 +59,7 @@ function PerfilPrivado() {
             />
           </section>
         </div>
-      </main>
-
-      <Footer />
+      </ClienteLayout>
     </div>
   );
 }

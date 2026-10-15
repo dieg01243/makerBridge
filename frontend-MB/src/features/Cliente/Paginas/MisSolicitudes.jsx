@@ -1,14 +1,16 @@
 import './MisSolicitudes.css'
+// import ClienteLayout from '../layout/ClienteLayout.jsx'
 
 function Solicitudes(props) {
   // const pedidos {props} = pedidos.props
   return (
-    <div className='Solicitudes'>
-      <div className='pedidos'>
-        <h2>Mis solicitudes</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, enim harum vero repudiandae iure reprehenderit nobis culpa, qui obcaecati iste dolorum ipsum neque labore blanditiis rerum. Vero totam cum atque.
-        </p>
+    <ClienteLayout
+      title="Mis solicitudes"
+      accent=""
+      description="Consultá el estado y los detalles de tus solicitudes de fabricación."
+    >
+      <div className='Solicitudes'>
+        <div className='pedidos'>
         {/* Comienzo tarjeta */}
         <div className="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl">
           <div className="md:flex">
@@ -29,10 +31,10 @@ function Solicitudes(props) {
           </div>
         </div>
 
-        <NavBar />
         <button className="btn-primary">Consultas</button>
+        </div>
       </div>
-    </div>
+    </ClienteLayout>
   )
 }
 
