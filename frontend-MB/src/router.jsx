@@ -21,6 +21,7 @@ import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 /* --------------------------Rutas del cliente -------------------------*/
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 import Solicitudes from './features/Cliente/Paginas/MisSolicitudes.jsx'
+// import ClienteLayout from './features/Cliente/layout/ClienteLayout.jsx'
 
 
 const router = createBrowserRouter([
@@ -45,15 +46,15 @@ const router = createBrowserRouter([
           /* { path: '/registro', element: <Register /> }, */
         ],
       },
-      {
+     /*  {
         path: '/cliente',
         element: (
           <RutaProtegida rol={['cliente']}>
-            {/* <ClienteLayout /> */}
+            <ClienteLayout />
           </RutaProtegida>
         ),
-        /* children: [{ index: true, element: <ClienteHome /> }], */
-      },
+        children: [{ index: true, element: <Solicitudes /> }],
+      }, */
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
@@ -61,6 +62,7 @@ const router = createBrowserRouter([
           /* children: [{ index: true, element: <ExplorarPedidos /> }], */
         }]
         : []),
+      /* MisSolicitudes */
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/missolicitudes',

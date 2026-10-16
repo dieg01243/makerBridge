@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { to: '/', label: 'Inicio' },
+  // { to: '/', label: 'Inicio' },
+  { to: '/solicitudes', label: 'Mis solicitudes' },
   { to: '/nueva-solicitud', label: 'Nueva solicitud' },
-  { to: '/cotizaciones', label: 'Cotizaciones' },
-  { to: '/pedidos', label: 'Mis pedidos' },
-  { to: '/mensajes', label: 'Mensajes' },
-  { to: '/perfil', label: 'Mi Perfil' },
+  // { to: '/cotizaciones', label: 'Cotizaciones' },
+  // { to: '/mensajes', label: 'Mensajes' },
+  // { to: '/perfil', label: 'Mi Perfil' },
 ]
 
 const DEFAULT_USER = { iniciales: 'CL', nombre: 'Cliente', verificado: false }
