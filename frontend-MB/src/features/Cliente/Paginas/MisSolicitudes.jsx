@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Productos } from '../API/Productos';
 import './MisSolicitudes.css'
 import ClienteLayout from '../layout/ClienteLayout'
 import TarjetaSolicitud from '../Componentes/TarjetaSolicitud'
 // import OrderCard from '../../maker/components/OrderCard'
 import Icon from '../../maker/components/Icon'
 import FiltersSidebar from '../../maker/components/FiltersSidebar'
+
 
 
 
@@ -33,6 +35,8 @@ function Solicitudes() {
             onChangeLocation={setLocation}
             onClear={onClear}
           />
+          {/* importacion productos de la API */}
+          <Productos />
         
           <div className='flex min-w-0 flex-1 flex-col gap-6' >
             <TarjetaSolicitud />

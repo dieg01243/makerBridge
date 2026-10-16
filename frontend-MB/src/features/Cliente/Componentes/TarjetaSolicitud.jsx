@@ -1,6 +1,16 @@
 
 import './TarjetaSolicitud.css'
 
+/* export const Tarjeta = props => {
+
+
+
+  return(
+
+  )
+} */
+
+
 function TarjetaSolicitud() {
 
   return(

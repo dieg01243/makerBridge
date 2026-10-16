@@ -39,7 +39,7 @@ export default function Navbar({ user = DEFAULT_USER }) {
           </NavLink>
         </div>
 
-        <nav className="hidden xl:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-brand-dark-muted">
+        <nav className="hidden xl:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-brand-dark-muted mr-auto ml-10">
           {NAV_LINKS.map(({ to, label }) => (
             <NavLink key={to} to={to} end={to === '/'} className={navLinkClass}>
               {label}
