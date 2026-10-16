@@ -21,6 +21,7 @@ import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 /* --------------------------Rutas del cliente -------------------------*/
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 import Solicitudes from './features/Cliente/Paginas/MisSolicitudes.jsx'
+// import NuevaSolicitud from './features/Cliente/Paginas/NuevaSolicitud.jsx'
 // import ClienteLayout from './features/Cliente/layout/ClienteLayout.jsx'
 
 
@@ -46,15 +47,25 @@ const router = createBrowserRouter([
           /* { path: '/registro', element: <Register /> }, */
         ],
       },
-     /*  {
-        path: '/cliente',
+     /* ------------------------------ Vista Cliente ----------------------------------- */
+     /* -------------------- Nueva solicitud ------------------------- */
+      /* {
+        path: '/NuevaSolicitud',
         element: (
           <RutaProtegida rol={['cliente']}>
             <ClienteLayout />
           </RutaProtegida>
         ),
-        children: [{ index: true, element: <Solicitudes /> }],
+        children: [{ index: true, element: <NuevaSolicitud /> }],
       }, */
+      /* ...(import.meta.env.DEV
+        ? [{
+          path: '/dev/nuevasolicitud',
+          element: <NuevaSolicitud />, */ /* <MakerLayout /> */
+          /* children: [{ index: true, element: <ExplorarPedidos /> }], */
+        /* }]
+        : []), */
+      /* ---------------------- Perfil Privado ------------------------ */
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
@@ -62,10 +73,11 @@ const router = createBrowserRouter([
           /* children: [{ index: true, element: <ExplorarPedidos /> }], */
         }]
         : []),
-      /* MisSolicitudes */
+
+      /* --------------------- MisSolicitudes --------------------------- */
       ...(import.meta.env.DEV
         ? [{
-          path: '/dev/missolicitudes',
+          path: '/dev/solicitudes',
           element: <Solicitudes />, /* <MakerLayout /> */
           /* children: [{ index: true, element: <ExplorarPedidos /> }], */
         }]
@@ -76,6 +88,7 @@ const router = createBrowserRouter([
           <RutaProtegida rol={['maker']}>
             <MakerLayout />
           </RutaProtegida>
+          
         ),
         children: [{ index: true, element: <ExplorarPedidos /> }],
       },

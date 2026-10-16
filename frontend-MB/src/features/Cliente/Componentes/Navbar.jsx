@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom';
 
 const NAV_LINKS = [
   { to: '/', label: 'Inicio' },
-  { to: '/nueva-solicitud', label: 'Nueva solicitud' },
-  { to: '/cotizaciones', label: 'Cotizaciones' },
-  { to: '/pedidos', label: 'Mis pedidos' },
-  { to: '/mensajes', label: 'Mensajes' },
+  { to: '/nuevasolicitud', label: 'Nueva solicitud' },
+  // { to: '/cotizaciones', label: 'Cotizaciones' },
+  { to: '/solicitudes', label: 'Mis solicitudes' },
+  // { to: '/mensajes', label: 'Mensajes' },
   { to: '/perfil', label: 'Mi Perfil', destacado: true },
 ];
 

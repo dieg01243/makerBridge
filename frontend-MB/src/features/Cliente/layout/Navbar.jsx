@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
   // { to: '/', label: 'Inicio' },
-  { to: '/solicitudes', label: 'Mis solicitudes' },
+  { to: '', label: 'Mis solicitudes' },
   { to: '/nueva-solicitud', label: 'Nueva solicitud' },
   // { to: '/cotizaciones', label: 'Cotizaciones' },
   // { to: '/mensajes', label: 'Mensajes' },

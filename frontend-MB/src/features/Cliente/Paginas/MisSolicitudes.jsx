@@ -36,13 +36,10 @@ function Solicitudes() {
             onClear={onClear}
           />
           {/* importacion productos de la API */}
-          <Productos />
+          {/* <Productos /> */}
         
           <div className='flex min-w-0 flex-1 flex-col gap-6' >
-            <TarjetaSolicitud />
-            <TarjetaSolicitud />
-            <TarjetaSolicitud />
-            <TarjetaSolicitud />
+            <Productos idUsuario={24} />
           </div>
         </div>
       </div>

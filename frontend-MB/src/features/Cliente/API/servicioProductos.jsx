@@ -18,7 +18,7 @@ export function guardar(producto) {
 
 
 // ---------------- crud: crUd : UPDATE (http out) ---------------
-export function actualizarr(id, producto) {
+export function actualizar(id, producto) {
     
 }
 
