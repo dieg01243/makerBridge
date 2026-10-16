@@ -1,4 +1,19 @@
-import Icon from '../../maker/components/Icon'
+import Footer from '../../public/components/Footer'
+
+
+
+const FooterCliente = () => {
+  return(
+    <div>
+      <Footer />
+    </div>
+  )
+}
+
+export default FooterCliente
+
+
+/* import Icon from '../../maker/components/Icon'
 
 const columns = [
   { title: 'Explorar', links: ['Bolsa de Pedidos', 'Catálogo de Diseños', 'Talleres Certificados', 'Cotizador Online'] },
@@ -75,3 +90,7 @@ export default function Footer() {
     </footer>
   )
 }
+ */
+
+
+
