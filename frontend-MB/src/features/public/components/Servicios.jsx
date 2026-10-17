@@ -73,10 +73,10 @@ const services = [
     listClass: 'text-brand-dark',
     checkClass: 'text-brand-primary',
     features: [
-      'Modelado CAD paramétrico con ajuste dimensional',
-      'Renders fotorrealistas y hasta 2 revisiones previas',
-      'Asesoría en encastres mecánicos y resiliencia',
-      'Entrega de la pieza física con garantía de encaje',
+      'Diseñamos la pieza a tu medida ',
+      'Te mostramos imágenes realistas del modelo 3D para que apruebes el diseño (incluye hasta 2 cambios)',
+      'Asesoríamiento tecnicos, nos encargamos que las piezas encajen  perfecto y sean resistenes',
+      'Entrega garantizada: Recibís la pieza física terminada, probada y lista para usar.',
     ],
     cta: 'Cotizar Proyecto Completo',
     ctaClass:
@@ -248,7 +248,7 @@ export default function Servicios() {
         </div>
         <div className="bg-white rounded-3xl border border-surface-border/80 shadow-subtle overflow-hidden">
           <div className="overflow-x-auto custom-scroll">
-            <table className="w-full text-left text-sm border-collapse min-w-[640px]">
+            <table className="w-full text-left text-sm border-collapse min-w-160">
               <thead>
                 <tr className="border-b border-surface-border bg-slate-50/60">
                   <th scope="col" className="py-4 px-6 font-bold text-brand-dark">Característica / Entregable</th>

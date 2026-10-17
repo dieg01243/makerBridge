@@ -17,6 +17,7 @@ import Login from './features/auth/pages/LoginPage'
 /* --------------------------Rutas del maker -------------------------*/
 import MakerLayout from './features/maker/layout/MakerLayout'
 import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
+import CotizarSolicitud from './features/maker/page/CotizarSolicitud'
 
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 const router = createBrowserRouter([
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
 
       {
-        element: <PublicLayout /> /*  <AuthLayout /> */,       // Navbar minimalista + footer del AuthLayout
+        element: <PublicLayout /> /*  <AuthLayout /> */,       // Navbar minimalista + footer que seran el AuthLayout
         children: [
           { path: '/login', element: <Login /> },
           /* { path: '/registro', element: <Register /> }, */
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
-          element: <PerfilPrivado />, /* <MakerLayout /> */
+          element: <PerfilPrivado />, 
           /* children: [{ index: true, element: <ExplorarPedidos /> }], */
         }]
         : []),
@@ -64,13 +65,18 @@ const router = createBrowserRouter([
             <MakerLayout />
           </RutaProtegida>
         ),
-        children: [{ index: true, element: <ExplorarPedidos /> }],
+        children: [{ index: true, element: <ExplorarPedidos /> },
+                   { path: 'cotizar/:id', element: <CotizarSolicitud /> },
+          
+        ],
       },
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/maker',
           element: <MakerLayout />,
-          children: [{ index: true, element: <ExplorarPedidos /> }],
+          children: [{ index: true, element: <ExplorarPedidos /> },
+                     { path: 'cotizar/:id', element: <CotizarSolicitud /> },
+          ],
         }]
         : []),
     ],
