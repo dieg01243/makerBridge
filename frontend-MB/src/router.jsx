@@ -21,8 +21,8 @@ import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 /* --------------------------Rutas del cliente -------------------------*/
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 import Solicitudes from './features/Cliente/Paginas/MisSolicitudes.jsx'
-// import NuevaSolicitud from './features/Cliente/Paginas/NuevaSolicitud.jsx'
-// import ClienteLayout from './features/Cliente/layout/ClienteLayout.jsx'
+import NuevaSolicitud from './features/Cliente/Paginas/NuevaSolicitud.jsx'
+import ClienteLayout from './features/Cliente/layout/ClienteLayout.jsx'
 
 
 const router = createBrowserRouter([
@@ -47,25 +47,8 @@ const router = createBrowserRouter([
           /* { path: '/registro', element: <Register /> }, */
         ],
       },
-     /* ------------------------------ Vista Cliente ----------------------------------- */
-     /* -------------------- Nueva solicitud ------------------------- */
-      /* {
-        path: '/NuevaSolicitud',
-        element: (
-          <RutaProtegida rol={['cliente']}>
-            <ClienteLayout />
-          </RutaProtegida>
-        ),
-        children: [{ index: true, element: <NuevaSolicitud /> }],
-      }, */
-      /* ...(import.meta.env.DEV
-        ? [{
-          path: '/dev/nuevasolicitud',
-          element: <NuevaSolicitud />, */ /* <MakerLayout /> */
-          /* children: [{ index: true, element: <ExplorarPedidos /> }], */
-        /* }]
-        : []), */
-      /* ---------------------- Perfil Privado ------------------------ */
+  /* -------------------------------------------- Vista Cliente ------------------------------------------------------ */
+      /* ------------------------------ Perfil Privado ----------------------------------- */
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
@@ -74,14 +57,19 @@ const router = createBrowserRouter([
         }]
         : []),
 
-      /* --------------------- MisSolicitudes --------------------------- */
+      /* --------------------- MisSolicitudes / Nueva solicitud--------------------------- */
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/solicitudes',
-          element: <Solicitudes />, /* <MakerLayout /> */
-          /* children: [{ index: true, element: <ExplorarPedidos /> }], */
+          element: <ClienteLayout />,
+          children: [
+            
+            { index: true, element: <Solicitudes /> },
+            { path: 'nueva-solicitud', element: <NuevaSolicitud /> }],
+            
         }]
         : []),
+      /* ------------------------------------------------------------------------------------------------------------------ */
       {
         path: '/maker',
         element: (

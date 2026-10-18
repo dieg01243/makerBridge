@@ -1,15 +1,11 @@
-import ClienteLayout from '../layout/ClienteLayout'
 import './NuevaSolicitud'
+import SolicitudDiseno from '../Componentes/SolicitudDiseno'
 
 
 
 function NuevaSolicitud() {
     return(
-        <>
-        <ClienteLayout/>
-        </>
-        
-        
+        <SolicitudDiseno />
     )
 }
 

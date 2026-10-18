@@ -47,9 +47,10 @@ const aOrder = (p) => {
    así que el click se captura en el contenedor (delegación de eventos). */
 export default function TarjetaSolicitud({ producto, onVerDetalle }) {
   return (
-    <div onClick={(e) => e.target.closest('button') && onVerDetalle?.(producto)}>
-      <OrderCard order={aOrder(producto)} />
-    </div>
+    
+      <div onClick={(e) => e.target.closest('button') && onVerDetalle?.(producto)}>
+        <OrderCard order={aOrder(producto)} />
+      </div>
   )
 }
 /* export const Tarjeta = props => {

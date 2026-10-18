@@ -5,7 +5,7 @@ import TarjetaSolicitud from '../Componentes/TarjetaSolicitud'
 
 export function Productos({ titulo, idUsuario }) {
   const [productos, setProductos] = useState([])
-  const [cargando, setCargando] = useState(true)
+  // const [cargando, setCargando] = useState(true)
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -18,9 +18,9 @@ export function Productos({ titulo, idUsuario }) {
       } catch (e) {
         console.error('Error al cargar productos', e)
         if (activo) setError('No pudimos cargar tus solicitudes. Intentá de nuevo en unos minutos.')
-      } finally {
-        if (activo) setCargando(false)
-      }
+      } /* finally {
+        // if (activo) setCargando(false)
+      } */
     }
 
     pedir()
@@ -34,9 +34,9 @@ export function Productos({ titulo, idUsuario }) {
     <section className="flex w-full min-w-0 flex-1 flex-col gap-6">
       {titulo && <h2 className="text-xl font-bold text-brand-charcoal">{titulo}</h2>}
 
-      {cargando && <p className="text-sm text-brand-muted">Cargando solicitudes…</p>}
+      {/* {cargando && <p className="text-sm text-brand-muted">Cargando solicitudes…</p>} */}
       {error && <p className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">{error}</p>}
-      {!cargando && !error && ordenados.length === 0 && (
+      {/* !cargando &&  */!error && ordenados.length === 0 && (
         <p className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-center text-sm text-brand-muted">
           Todavía no tenés solicitudes.
         </p>

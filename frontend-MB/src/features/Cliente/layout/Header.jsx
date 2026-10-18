@@ -1,9 +1,8 @@
 
 export default function Header({
-  title = 'Mi',
-  accent = 'perfil',
-  description = 'En esta sección vas a poder modificar tus datos personales. ¡Cualquier consulta estamos para ayudarte!',
-}) {
+  title,
+  accent,
+  description}) {
   return (
     <div className="mb-8 md:mb-10 text-left">
       <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-dark">
