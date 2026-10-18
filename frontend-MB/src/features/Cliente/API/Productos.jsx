@@ -14,6 +14,7 @@ export function Productos({ titulo, idUsuario }) {
     async function pedir() {
       try {
         const datos = await servicioProductos.obtener(idUsuario)
+        console.log(datos)
         if (activo) setProductos(datos)
       } catch (e) {
         console.error('Error al cargar productos', e)
