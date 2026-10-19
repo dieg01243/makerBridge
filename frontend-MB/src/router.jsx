@@ -49,13 +49,14 @@ const router = createBrowserRouter([
       },
   /* -------------------------------------------- Vista Cliente ------------------------------------------------------ */
       /* ------------------------------ Perfil Privado ----------------------------------- */
-      ...(import.meta.env.DEV
+      /* ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
-          element: <PerfilPrivado />, /* <MakerLayout /> */
-          /* children: [{ index: true, element: <ExplorarPedidos /> }], */
+          element: <ClienteLayout />, //<MakerLayout />
+          children: [
+              { index: true, element: <PerfilPrivado /> }],
         }]
-        : []),
+        : []), */
 
       /* --------------------- MisSolicitudes / Nueva solicitud--------------------------- */
       ...(import.meta.env.DEV
@@ -65,7 +66,8 @@ const router = createBrowserRouter([
           children: [
             
             { index: true, element: <Solicitudes /> },
-            { path: 'nueva-solicitud', element: <NuevaSolicitud /> }],
+            { path: 'nueva-solicitud', element: <NuevaSolicitud /> },
+            { path: 'mi-perfil', element: <PerfilPrivado /> }],
             
         }]
         : []),

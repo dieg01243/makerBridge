@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const NAV_LINKS = [
   // { to: '/', label: 'Inicio' },
@@ -10,7 +10,7 @@ const NAV_LINKS = [
   // { to: '/perfil', label: 'Mi Perfil' },
 ]
 
-const DEFAULT_USER = { iniciales: 'CL', nombre: 'Cliente', verificado: false }
+ const DEFAULT_USER =  { iniciales: 'CL', nombre: 'Cliente', verificado: false }
 
 export default function Navbar({ user = DEFAULT_USER }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -75,7 +75,8 @@ export default function Navbar({ user = DEFAULT_USER }) {
             </button>
 
             {/* ------------------------------------------- Imagen Perfil ----------------------------------------------- */}
-            <div className="flex items-center space-x-3 pl-1">
+            <Link to='mi-perfil'
+              title='Mi perfil'             >
               <div className="w-10 h-10 rounded-full bg-brand-salvia text-brand-dark font-bold flex items-center justify-center text-sm border-2 border-white shadow-sm ring-1 ring-black/5">
                 {user.iniciales}
               </div>
@@ -90,7 +91,9 @@ export default function Navbar({ user = DEFAULT_USER }) {
                   </span>
                 )}
               </div>
-            </div>
+            </Link>
+            
+
           </div>
         </div>
       </div>

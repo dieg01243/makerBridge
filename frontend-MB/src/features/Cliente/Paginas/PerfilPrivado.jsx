@@ -2,8 +2,8 @@ import { useState } from 'react';
 import DatosPersonales from '../Componentes/DatosPersonales.jsx';
 import DatosUsuario from '../Componentes/DatosUsuarios.jsx';
 import FotoDePerfil from '../Componentes/FotoDePerfil.jsx';
-import ClienteLayout from '../layout/ClienteLayout.jsx';
 import './PerfilPrivado.css';
+import Header from '../layout/Header.jsx';
 
 const USER = {
   id: 'MB-2026-0842',
@@ -30,12 +30,11 @@ function PerfilPrivado() {
 
   return (
     <div className="perfil-privado-page">
-      <ClienteLayout
-        user={USER}
-        title="Mi"
-        accent="perfil"
-        description="En esta sección vas a poder modificar tus datos personales. ¡Cualquier consulta estamos para ayudarte!"
-      >
+      <Header 
+      title='Mi'
+      accent='perfil'
+      description='En esta seccion vas a poder modificar tus datos personales, no dudes en consultar tu duda con Benchy3D.'/>
+
         {avisoGuardado && (
           <p
             className="mb-6 rounded-2xl border border-brand-border-subtle bg-white px-5 py-4 text-sm font-medium text-brand-dark-muted shadow-card"
@@ -59,7 +58,6 @@ function PerfilPrivado() {
             />
           </section>
         </div>
-      </ClienteLayout>
     </div>
   );
 }
