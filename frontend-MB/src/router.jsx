@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       /* --------------------- MisSolicitudes / Nueva solicitud--------------------------- */
       ...(import.meta.env.DEV
         ? [{
-          path: '/dev/solicitudes',
+          path: '/cliente',
           element: <ClienteLayout />,
           children: [
             

@@ -21,7 +21,7 @@ export default function Navbar({ user = DEFAULT_USER }) {
           <div className="">
 
             {/* // ---------------------- Primer Nav Link a Home desde el Logo -------------------- */}
-            <NavLink to="/dev/solicitudes" title="MakerBridge 3D HUB">
+            <NavLink to="/cliente" title="MakerBridge 3D HUB">
               <div className="w-11 h-11 bg-brand-blue rounded-xl flex items-center justify-center shadow-sm transition group-hover:scale-105">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScevamARhrClGcdHPxTxxEyl06NqftNyo5HEWvfl7tJg&s=10" alt="Logo del sitio" />
               </div>
