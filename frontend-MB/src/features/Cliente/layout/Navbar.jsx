@@ -16,25 +16,28 @@ export default function Navbar({ user = DEFAULT_USER }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 flex items-center justify-between sticky top-0 z-40 bg-brand-crema/90 backdrop-blur-md border-b border-brand-border-subtle">
-          <div className="flex items-center space-x-3">
+    <div className='sticky top-0 z-50 bg-[#F8F6F1]/90 backdrop-blur-sm border-b-2 border-brand-blue shadow-md '>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 flex items-center justify-between">
+          <div className="">
 
             {/* // ---------------------- Primer Nav Link a Home desde el Logo -------------------- */}
-            <NavLink to="/dev/solicitudes" className="flex items-center gap-3 group" title="MakerBridge 3D HUB">
-              <div className="w-11 h-11 bg-brand-blue rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-sm tracking-wider transition group-hover:scale-105">
-                <img src="https://imgs.search.brave.com/uc2B2dWdplH9xFNzyLKsFAKsQozOIu1efcfeesuOdo4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF8y/WF85MDUwNDctTUxB/NzA1NDQ4NDY2MTVf/MDcyMDIzLVYud2Vi/cA" alt="" />
+            <NavLink to="/dev/solicitudes" title="MakerBridge 3D HUB">
+              <div className="w-11 h-11 bg-brand-blue rounded-xl flex items-center justify-center shadow-sm transition group-hover:scale-105">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScevamARhrClGcdHPxTxxEyl06NqftNyo5HEWvfl7tJg&s=10" alt="Logo del sitio" />
               </div>
             </NavLink>
           </div>
           
-          {<nav className="hidden xl:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-brand-dark-muted mr-auto ml-10">
+          <nav className={`${menuOpen ? 'flex' : 'hidden'} absolute top-full inset-x-0 flex-col gap-1 px-4 py-3 sm:px-6 bg-[#F8F6F1] border-b-2 border-brand-blue text-sm text-brand-dark-muted xl:static xl:flex xl:flex-row xl:items-center xl:gap-2 xl:p-0 xl:bg-transparent xl:border-b-0 xl:ml-10 xl:mr-auto `}>
             {NAV_LINKS.map(({ to, label }) => (
-              <NavLink key={to} to={to} className='px-3.5 py-2 rounded-lg transition hover:text-brand-terracota font-bold'>
-                {label}
+              <NavLink key={to} to={to} 
+              onClick={() => setMenuOpen(false)}
+              className='px-3.5 py-2 rounded-lg transition hover:text-brand-terracota font-bold'>
+              {label}
               </NavLink>
             ))}
-          </nav>}
+          </nav>
+        
 
           <div className="flex items-center space-x-4">
             <button

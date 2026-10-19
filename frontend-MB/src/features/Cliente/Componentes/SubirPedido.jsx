@@ -28,7 +28,8 @@ const estadoInicial = {
 const claseCampo =
   'w-full rounded-full border border-[#E3DDCF] bg-[#F8F6F0] px-4 py-2.5 text-sm text-[#2B2B2B] placeholder:text-[#8A8578] focus-visible:border-[#E07A5F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/40'
 
-const claseLabel = 'text-xs font-medium text-[#2B2B2B]'
+const claseLabel = 'text-xs font-medium text-[#2B2B2B] '
+const estilo = 'flex flex-col gap-1.5'
 
 function SubirPedido() {
   const [formulario, setFormulario] = useState(estadoInicial)
@@ -177,8 +178,9 @@ function SubirPedido() {
         <div className="rounded-3xl bg-white p-5 shadow-sm sm:p-8">
           {/* 1 columna en celular, 2 en tablet, 3 en notebook */}
           <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+
             {/* Nombre del producto */}
-            <div className="flex flex-col gap-1.5">
+            <div className={estilo}>
               <label htmlFor="nombre" className={claseLabel}>
                 Nombre del producto
               </label>
@@ -195,7 +197,7 @@ function SubirPedido() {
             </div>
 
             {/* Tipo de material */}
-            <div className="flex flex-col gap-1.5">
+            <div className={estilo}>
               <label htmlFor="material" className={claseLabel}>
                 Tipo de material
               </label>
@@ -219,7 +221,7 @@ function SubirPedido() {
             </div>
 
             {/* Cantidad */}
-            <div className="flex flex-col gap-1.5">
+            <div className={estilo}>
               <label htmlFor="cantidad" className={claseLabel}>
                 Cantidad
               </label>
@@ -237,7 +239,7 @@ function SubirPedido() {
             </div>
 
             {/* Color */}
-            <div className="flex flex-col gap-1.5">
+            <div className={estilo}>
               <label htmlFor="color" className={claseLabel}>
                 Color
               </label>
@@ -253,7 +255,7 @@ function SubirPedido() {
             </div>
 
             {/* Fecha límite */}
-            <div className="flex flex-col gap-1.5">
+            <div className={estilo}>
               <label htmlFor="fechaLimite" className={claseLabel}>
                 Fecha límite
               </label>
@@ -268,7 +270,7 @@ function SubirPedido() {
             </div>
 
             {/* Servicio */}
-            <div className="flex flex-col gap-1.5">
+            <div className={estilo}>
               <label htmlFor="servicio" className={claseLabel}>
                 Servicio
               </label>
@@ -287,10 +289,24 @@ function SubirPedido() {
                     </option>
                   ))}
                 </select>
-                <IconoFlecha />
               </div>
             </div>
           </div>
+
+          {/* Observaciones o sugerencias */}
+          <div className={estilo}>
+            <label htmlFor="observaciones" className={claseLabel}>
+              Observacion o sugerencias
+            </label>
+            <textarea
+                name="observaciones"
+                value={formulario.observaciones}
+                onChange={handleChange}
+                rows={4}
+                className='min-h-28 w-full resize-y rounded-2xl border border-[#E3DDCF] bg-[#F8F6F0] px-4 py-2.5 text-sm text-[#2B2B2B] placeholder:text-[#8A8578] focus-visible:border-[#E07A5F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/40'
+              />
+          </div>
+          
 
           {/* Zona para subir el archivo STL (no aparece si el servicio es solo Diseño) */}
           {mostrarModelo && (
