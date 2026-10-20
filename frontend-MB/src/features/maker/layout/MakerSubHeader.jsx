@@ -6,7 +6,7 @@ export default function MakerSubHeader({ activeOrders = 42 }) {
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-[13px]">
         <div className="flex items-center gap-2 text-[#78716c]">
           <Icon name="storefront" className="text-[16px] text-brand-primary" />
-          <a href="#" className="hover:text-brand-primary transition-colors">Explorar Pedidos</a>
+          <a href="#" className="hover:text-brand-primary transition-colors">Maker / Explorar Pedidos</a>
           <span>/</span>
         </div>
         <div className="flex items-center gap-4 text-[#78716c]">
@@ -14,7 +14,7 @@ export default function MakerSubHeader({ activeOrders = 42 }) {
             <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] animate-pulse" />
             <span>{activeOrders} órdenes activas en espera de Maker</span>
           </div>
-          <span className="text-[#d6c4b2] hidden sm:inline">|</span>
+    
         </div>
       </div>
     </div>

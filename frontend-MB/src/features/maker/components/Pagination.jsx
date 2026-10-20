@@ -1,12 +1,12 @@
 import Icon from './Icon'
 
-export default function Pagination({ shown, total, page, pages, onChange }) {
+export default function Pagination({ shown, total, page, pages, onChange, label = 'pedidos disponibles' }) {
   const numbers = Array.from({ length: pages }, (_, i) => i + 1)
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white rounded-2xl border border-[#ebdccb] shadow-sm mt-2">
       <span className="text-[13px] text-[#78716c]">
-        Mostrando <strong className="text-[#1c1917]">{shown}</strong> de <strong className="text-[#1c1917]">{total}</strong> pedidos disponibles
+        Mostrando <strong className="text-[#1c1917]">{shown}</strong> de <strong className="text-[#1c1917]">{total}</strong> {label}
       </span>
       <div className="flex items-center gap-1.5">
         <button

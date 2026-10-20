@@ -31,8 +31,10 @@ export default function OrderCard({ order }) {
           <div className="flex items-center gap-2 mt-1 text-[13px] text-[#78716c] flex-wrap">
             <span className="font-semibold text-[#1c1917] flex items-center gap-1">
               {client.verified && <Icon name="verified" className="text-[#f1b333] text-[16px]" />}
+              <Icon name="person" className="text-[18px] text-[#e06d53]" />
               {client.name}
             </span>
+            
             <span className="text-[#d6c4b2]">•</span>
             <span className="flex items-center gap-1">
               <Icon name="location_on" className="text-[15px] text-[#a8a29e]" />

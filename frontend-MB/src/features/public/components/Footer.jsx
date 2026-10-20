@@ -1,3 +1,12 @@
+import { Link } from "react-router-dom";
+
+const links = [
+  { label: 'Home', to: '/' },
+  { label: 'Servicios', to: '/servicios' },
+  { label: 'Cómo Funciona', to: '/como-funciona' },
+]
+
+
 const socials = [
   {
     label: "X (Twitter)",
@@ -41,6 +50,12 @@ const socials = [
 ];
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="bg-[#f0ebe3] border-t border-stone-300/70 pt-12 pb-16 px-4 sm:px-6 lg:px-8 text-slate-700">
       <div className="max-w-7xl mx-auto">
@@ -85,19 +100,15 @@ export default function Footer() {
               Explorar
             </h3>
             <ul className="space-y-3 text-sm text-slate-600">
-              {[
-                "Cómo funciona",
-                "Servicios",
-                "Proveedores",
-                "Sobre nosotros",
-              ].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+              {links.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
                     className="hover:text-brand-primary transition-colors"
+                    onClick={scrollToTop} // <-- Hace que la pagina suba arriba aunque estemos en el footer
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -11,15 +11,18 @@ import ExplorarProductos from './features/public/pages/ExplorarProductos'
 */
 /* --------------------------Rutas de autenticación -------------------------*/
 /* import AuthLayout from './features/auth/layout/AuthLayout' */  /* Plantilla que comparten las paginas de autenticacion */
-import RutaProtegida from './features/auth/RutaProtegida'
+import RutaProtegida from './features/auth/pages/RutaProtegida.jsx'
 import Login from './features/auth/pages/LoginPage'
-/* import Register from './features/auth/pages/Register' */
+import Registro from './features/auth/pages/RegistroPage.jsx'
 /* --------------------------Rutas del maker -------------------------*/
 import MakerLayout from './features/maker/layout/MakerLayout'
 import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 import CotizarSolicitud from './features/maker/page/CotizarSolicitud'
+import MisTrabajos from './features/maker/page/MisTrabajos'
+
 
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
+
 const router = createBrowserRouter([
   {
     element: <RootLayout />,          // Benchy fijo en TODO (habria que ver si es lo suficientemente seguro)
@@ -39,7 +42,7 @@ const router = createBrowserRouter([
         element: <PublicLayout /> /*  <AuthLayout /> */,       // Navbar minimalista + footer que seran el AuthLayout
         children: [
           { path: '/login', element: <Login /> },
-          /* { path: '/registro', element: <Register /> }, */
+          { path: '/registro', element: <Registro /> },
         ],
       },
       {
@@ -67,6 +70,7 @@ const router = createBrowserRouter([
         ),
         children: [{ index: true, element: <ExplorarPedidos /> },
                    { path: 'cotizar/:id', element: <CotizarSolicitud /> },
+                   { path: 'mis-trabajos', element: <MisTrabajos /> },
           
         ],
       },
@@ -76,6 +80,7 @@ const router = createBrowserRouter([
           element: <MakerLayout />,
           children: [{ index: true, element: <ExplorarPedidos /> },
                      { path: 'cotizar/:id', element: <CotizarSolicitud /> },
+                     { path: 'mis-trabajos', element: <MisTrabajos /> },
           ],
         }]
         : []),

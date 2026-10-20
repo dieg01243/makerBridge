@@ -52,11 +52,12 @@ export default function RutaProtegida({ rol, children }) {
   }, []);
 
   if (estado === "cargando") return <p style={{ padding: 32 }}>Cargando...</p>;
-  if (estado === "sin_sesion") return <Navigate to="/Login" replace />;
+  if (estado === "sin_sesion") return <Navigate to="/login" replace />;
 
   // Si el rol real (el que dice el servidor) no coincide, lo mandamos a SU dashboard
-  if (rolReal !== rol) {
-    return <Navigate to={RUTA_POR_ROL[rolReal] ?? "/"} replace />;
+const permitidos = Array.isArray(rol) ? rol : [rol]
+if (!permitidos.includes(rolReal)) {
+  return <Navigate to={RUTA_POR_ROL[rolReal] ?? "/"} replace />
   }
 
   return children;
