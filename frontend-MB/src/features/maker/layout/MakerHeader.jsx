@@ -1,9 +1,14 @@
 import Icon from '../components/Icon'
-
+import{Link, NavLink} from 'react-router-dom'
 const navLinks = [
-  { label: 'Explorar Pedidos', href: '#', active: true },
-  { label: 'Mis trabajos', href: '#' },
+  { label: 'Mis trabajos', to: '/dev/maker/mis-trabajos'},
 ]
+const navLinkClasses = ({ isActive }) =>
+  `px-3.5 py-2 text-sm rounded-lg transition-colors relative ${isActive
+    ? "font-semibold text-brand-primary after:content-[''] after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-brand-primary"
+    : 'font-medium text-slate-600 hover:text-slate-900 hover:bg-black/5'
+  }`
+
 
 export default function MakerHeader({ user = { initials: 'CD', name: 'Carlos Duarte' } }) {
   return (
@@ -24,34 +29,30 @@ export default function MakerHeader({ user = { initials: 'CD', name: 'Carlos Dua
           </a>
 
           {/* Nav */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navLinks.map(({ label, href, active }) => (
-              <a
-                key={label}
-                href={href}
-                className={
-                  active
-                    ? 'text-[14px] font-bold text-brand-primary border-b-2 border-brand-primary pb-1 pt-1'
-                    : 'text-[14px] font-medium text-[#78716c] hover:text-brand-primary transition-colors'
-                }
-              >
+              
+          <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-7">
+            <NavLink to="/dev/maker" end className={navLinkClasses}>
+             Explorar Pedidos
+            </NavLink>
+            {navLinks.map(({ label, to }) => (
+              <NavLink key={label} to={to} className={navLinkClasses}>
                 {label}
-              </a>
+              </NavLink>
             ))}
           </nav>
-        </div>
-
-        {/* Usuario */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2.5 pl-2 cursor-pointer border-l border-[#ede3d8]">
-            <div className="w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center text-white font-bold text-sm shadow-sm">
-              {user.initials}
             </div>
-            <span className="hidden md:inline font-semibold text-[14px] text-[#292524]">{user.name}</span>
-            <Icon name="expand_more" className="text-[#78716c] text-[18px]" />
+          {/* Usuario */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2.5 pl-2 cursor-pointer border-l border-[#ede3d8]">
+              <div className="w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                {user.initials}
+              </div>
+              <span className="hidden md:inline font-semibold text-[14px] text-[#292524]">{user.name}</span>
+              <Icon name="expand_more" className="text-[#78716c] text-[18px]" />
+            </div>
           </div>
         </div>
-      </div>
+      
     </header>
   )
 }

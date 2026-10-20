@@ -4,7 +4,12 @@ export const MATERIALS = [
   { id: 'pla', label: 'PLA' },
   { id: 'petg', label: 'PETG' },
   { id: 'tpu', label: 'TPU Flexible' },
-  { id: 'cad', label: 'Servicio CAD Incluido' },
+
+]
+export const SERVICIOS = [
+  { id: 'impresion', label: 'Impresión 3D' },
+  { id: 'impydis', label: 'Impresión y Diseño' },
+  { id: 'disenio', label: 'Diseño 3D' },
 ]
 
 export const LOCATIONS = [
@@ -18,7 +23,7 @@ const Title = ({ children }) => (
   <span className="text-[11px] font-mono font-bold text-[#a8a29e] uppercase tracking-wider">{children}</span>
 )
 
-export default function FiltersSidebar({ materials, location, onToggleMaterial, onChangeLocation, onClear }) {
+export default function FiltersSidebar({ materials, servicios, location, onToggleMaterial, onToggleServicios, onChangeLocation, onClear }) {
   return (
     <aside className="w-full lg:w-70 shrink-0 flex flex-col gap-5 lg:sticky lg:top-28">
       <div className="bg-white rounded-2xl p-5 shadow-sm border border-[#ede3d5] flex flex-col gap-5">
@@ -45,6 +50,25 @@ export default function FiltersSidebar({ materials, location, onToggleMaterial, 
                   className="w-4 h-4 accent-brand-primary rounded border-gray-300"
                 />
                 <span>{m.label}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        
+        {/* Servicio */}
+        <div className="flex flex-col gap-2.5">
+          <Title>Servicio</Title>
+          <div className="flex flex-col gap-2 font-medium text-[13px] text-[#44403c]">
+            {SERVICIOS.map((s) => (
+              <label key={s.id} className="flex items-center gap-2.5 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={servicios.includes(s.id)}
+                  onChange={() => onToggleServicios(s.id)}
+                  className="w-4 h-4 accent-brand-primary rounded border-gray-300"
+                />
+                <span>{s.label}</span>
               </label>
             ))}
           </div>

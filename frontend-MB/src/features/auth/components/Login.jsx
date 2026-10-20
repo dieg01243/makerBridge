@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 const MailIcon = () => (
@@ -109,10 +110,10 @@ export default function Login({ onSubmit, onGoogle , error, loading }) {
         </form>
 
         <div className="links">
-          <a href="/recuperar">¿Olvidaste tu contraseña?</a>
-          <a href="/registro">¿Eres nuevo? Crea tu cuenta</a>
+          <Link to ="/recuperar">¿Olvidaste tu contraseña?</Link>
+          <Link to="/registro">¿Eres nuevo? Crea tu cuenta</Link>
         </div>
-
+{/* 
         <div className="divider divider--small">
           <span>O DESDE</span>
         </div>
@@ -120,7 +121,7 @@ export default function Login({ onSubmit, onGoogle , error, loading }) {
         <button type="button" className="btn btn-google" onClick={onGoogle}>
           <span className="google-badge"><GoogleIcon /></span>
           Desde Google
-        </button>
+        </button> */}
       </section>
     </main>
   );

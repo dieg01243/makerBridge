@@ -13,7 +13,7 @@ function Dashboard({ titulo }) {
   const cerrarSesion = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
-    navigate("/Login", { replace: true });
+    navigate("/login", { replace: true });
   };
 
   return (

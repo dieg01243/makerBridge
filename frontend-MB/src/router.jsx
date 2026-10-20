@@ -11,12 +11,15 @@ import ExplorarProductos from './features/public/pages/ExplorarProductos'
 */
 /* --------------------------Rutas de autenticación -------------------------*/
 /* import AuthLayout from './features/auth/layout/AuthLayout' */  /* Plantilla que comparten las paginas de autenticacion */
-import RutaProtegida from './features/auth/RutaProtegida'
+import RutaProtegida from './features/auth/pages/RutaProtegida.jsx'
 import Login from './features/auth/pages/LoginPage'
-/* import Register from './features/auth/pages/Register' */
+import Registro from './features/auth/pages/RegistroPage.jsx'
 /* --------------------------Rutas del maker -------------------------*/
 import MakerLayout from './features/maker/layout/MakerLayout'
 import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
+import CotizarSolicitud from './features/maker/page/CotizarSolicitud'
+import MisTrabajos from './features/maker/page/MisTrabajos'
+
 
 /* --------------------------Rutas del cliente -------------------------*/
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
@@ -41,10 +44,10 @@ const router = createBrowserRouter([
       },
 
       {
-        element: <PublicLayout /> /*  <AuthLayout /> */,       // Navbar minimalista + footer del AuthLayout
+        element: <PublicLayout /> /*  <AuthLayout /> */,       // Navbar minimalista + footer que seran el AuthLayout
         children: [
           { path: '/login', element: <Login /> },
-          /* { path: '/registro', element: <Register /> }, */
+          { path: '/registro', element: <Registro /> },
         ],
       },
   /* -------------------------------------------- Vista Cliente ------------------------------------------------------ */
@@ -80,13 +83,20 @@ const router = createBrowserRouter([
           </RutaProtegida>
           
         ),
-        children: [{ index: true, element: <ExplorarPedidos /> }],
+        children: [{ index: true, element: <ExplorarPedidos /> },
+                   { path: 'cotizar/:id', element: <CotizarSolicitud /> },
+                   { path: 'mis-trabajos', element: <MisTrabajos /> },
+          
+        ],
       },
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/maker',
           element: <MakerLayout />,
-          children: [{ index: true, element: <ExplorarPedidos /> }],
+          children: [{ index: true, element: <ExplorarPedidos /> },
+                     { path: 'cotizar/:id', element: <CotizarSolicitud /> },
+                     { path: 'mis-trabajos', element: <MisTrabajos /> },
+          ],
         }]
         : []),
     ],

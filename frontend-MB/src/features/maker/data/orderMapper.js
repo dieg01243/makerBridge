@@ -1,4 +1,5 @@
 import { ORDER_DEFAULTS as D } from './orderDefaults'
+//-------------------------------------Datos que se usan para el detalle de un pedido en la vista de explorarpedidos---------
 
 const MONTHS = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 
@@ -34,11 +35,11 @@ export function toOrderCard(row) {
       ...D.statusStyle,
       label: D.statusLabels[String(row.estado).toLowerCase()] ?? row.estado,
     },
-    title: row.Titulo,
+    title: row.titulo,
     // Si se hace un JOIN con usuarios y devolvés `nombre_usuario`, se usa acá.
     client: { ...D.client, name: row.nombre_usuario ?? D.client.name },
-    location: row.Ubicacion,
-    file: D.file,
+    location: row.ubicacion,
+    file: D.file, /* Probablemente despues deba cambiarlo por el verdadero nombre del archivo */
     specs: [
       { label: 'Cantidad', value: `${row.cantidad} ${row.cantidad === 1 ? 'unidad' : 'unidades'}` },
       { label: 'Material', value: row.material },

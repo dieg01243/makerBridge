@@ -20,7 +20,7 @@ function Solicitudes() {
         title='Mis'
         accent='solicitudes'
         description='En esta seccion vas a poder visualizar aquellos pedidos que estan en la espera de ser tomados por un maker. ¡Revisa las distintas cotizaciones que te ofrecen los miembros de nuestra comunidad!'/>
-        <div className="contents [--color-brand-primary:#568ea6] flex flex-col items-start gap-6 lg:flex-row flex flex-col gap-6">
+        <div className="contents [--color-brand-primary:#568ea6] items-start gap-6 lg:flex-row  flex-col ">
         
           <FiltersSidebar
             materials={materials}

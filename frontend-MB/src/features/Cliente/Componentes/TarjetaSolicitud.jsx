@@ -30,9 +30,10 @@ const aOrder = (p) => {
     location: p.localidad ?? 'Ubicación no informada', // la API todavía no tiene este dato
     file: { icon: 'attach_file', iconClass: 'text-brand-primary', label: 'Archivo adjunto' },
     specs: [
-      { label: 'Material', value: p.material },
-      { label: 'Color', value: p.color },
-      { label: 'Cantidad', value: p.cantidad },
+      { label: 'CANTIDAD', value: p.cantidad },
+      { label: 'MATERIAL', value: p.material },
+      { label: 'COLOR/ACABADO', value: p.color },
+      
     ].filter((s) => s.value !== '' && s.value != null),
     deadline: { icon: 'event', date: aFecha(p.fechaLimite) },
     image: { src: p.archivoUrl, alt: `Pedido ${p.idPedido}`, tag: 'Archivo' },

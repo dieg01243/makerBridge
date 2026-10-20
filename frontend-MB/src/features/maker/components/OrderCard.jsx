@@ -1,9 +1,10 @@
 import Icon from './Icon'
+import { Link } from 'react-router-dom'
 
 export default function OrderCard({ order }) {
   const {
     accentClass, code, publishedAgo, status, title, client, location, file,
-    specs, deadline, image, description, footerInfo,primaryAction,
+    specs, deadline, image, description, footerInfo, primaryAction,
   } = order
 
   return (
@@ -30,8 +31,10 @@ export default function OrderCard({ order }) {
           <div className="flex items-center gap-2 mt-1 text-[13px] text-[#78716c] flex-wrap">
             <span className="font-semibold text-[#1c1917] flex items-center gap-1">
               {client.verified && <Icon name="verified" className="text-[#f1b333] text-[16px]" />}
+              <Icon name="person" className="text-[18px] text-[#e06d53]" />
               {client.name}
             </span>
+            
             <span className="text-[#d6c4b2]">•</span>
             <span className="flex items-center gap-1">
               <Icon name="location_on" className="text-[15px] text-[#a8a29e]" />
@@ -66,9 +69,7 @@ export default function OrderCard({ order }) {
       <div className="flex flex-col md:flex-row items-center gap-4 bg-[#fcf9f2] p-3 rounded-xl border border-[#f4ebe1]">
         <div className="w-full md:w-36 h-24 rounded-lg bg-[#efe7db] flex items-center justify-center shrink-0 relative overflow-hidden">
           <img className="w-full h-full object-cover rounded-lg" src={image.src} alt={image.alt} />
-          <span className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 text-white font-mono text-[10px]">
-            {image.tag}
-          </span>
+
         </div>
         <div className="flex-1 flex flex-col justify-center">
           <p className="text-[13px] text-[#57534e] line-clamp-2 italic">"{description}"</p>
@@ -79,7 +80,7 @@ export default function OrderCard({ order }) {
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-1 border-t border-[#f4ebe1]">
         {footerInfo.variant === 'service' ? (
           <div className="flex items-center gap-1.5 text-[#78716c] text-[12px]">
-            <Icon name="hourglass_bottom" className="text-[16px] text-brand-primary" />
+            <Icon name="handyman" className="text-[12px] text-brand-primary" />
             <span>Servicio : <strong className="text-[#1c1917]">{footerInfo.text}</strong></span>
           </div>
         ) : (
@@ -90,13 +91,13 @@ export default function OrderCard({ order }) {
         )}
 
         <div className="flex items-center gap-2.5 w-full sm:w-auto">
-          <button
-            type="button"
-            className="flex-1 sm:flex-none h-10 px-5 rounded-xl bg-brand-primary text-white hover:bg-brand-dark text-[13px] font-bold shadow-sm shadow-brand-primary/25 transition-all flex items-center justify-center gap-1.5"
+          <Link
+            to={`cotizar/${order.id}`}
+            className="flex-1 sm:flex-none h-10 px-5 rounded-xl bg-brand-primary text-white hover:bg-[#be543c] text-[13px] font-bold shadow-sm shadow-brand-primary/25 transition-all flex items-center justify-center gap-1.5"
           >
             <span>{primaryAction}</span>
             <Icon name="arrow_forward" className="text-[16px]" />
-          </button>
+          </Link>
         </div>
       </div>
     </article>
