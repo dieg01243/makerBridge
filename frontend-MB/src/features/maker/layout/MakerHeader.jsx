@@ -1,7 +1,8 @@
 import Icon from '../components/Icon'
-import{Link, NavLink} from 'react-router-dom'
+import{NavLink} from 'react-router-dom'
+import { useState } from 'react';
 const navLinks = [
-  { label: 'Mis trabajos', to: '/dev/maker/mis-trabajos'},
+  { label: 'Mis trabajos', to: '/maker/mis-trabajos'},
 ]
 const navLinkClasses = ({ isActive }) =>
   `px-3.5 py-2 text-sm rounded-lg transition-colors relative ${isActive
@@ -31,7 +32,7 @@ export default function MakerHeader({ user = { initials: 'CD', name: 'Carlos Dua
           {/* Nav */}
               
           <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-7">
-            <NavLink to="/dev/maker" end className={navLinkClasses}>
+            <NavLink to="/maker" end className={navLinkClasses}>
              Explorar Pedidos
             </NavLink>
             {navLinks.map(({ label, to }) => (

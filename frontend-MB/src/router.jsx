@@ -62,9 +62,25 @@ const router = createBrowserRouter([
         : []), */
 
       /* --------------------- MisSolicitudes / Nueva solicitud--------------------------- */
+
+        {
+        path: '/cliente',
+        element: (
+          <RutaProtegida rol={['cliente']}>
+            <ClienteLayout />
+          </RutaProtegida>
+          
+        ),
+        children: [{ index: true, element: <Solicitudes /> },
+                   { path: 'nueva-solicitud', element: <NuevaSolicitud /> },
+                   { path: 'mi-perfil', element: <PerfilPrivado /> },
+          
+        ],
+      },
+
       ...(import.meta.env.DEV
         ? [{
-          path: '/cliente',
+          path: '/dev/cliente',
           element: <ClienteLayout />,
           children: [
             
