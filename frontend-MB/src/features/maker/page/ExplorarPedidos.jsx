@@ -8,15 +8,14 @@ import { toOrderCard } from '../data/orderMapper'
 import useDebounce from '../../../hooks/useDebounce'
 
 const DEFAULT_MATERIALS = ['pla', 'petg']
-const DEFAULT_SERVICIOS = ['impresion']
 const DEFAULT_LOCATION = 'all'
 const DEFAULT_SORT = 'recent'
-const PAGE_SIZE = 6   // pedidos que mostramos por página
+const PAGE_SIZE = 4   // pedidos que mostramos por página
 
 export default function ExplorarPedidos() {
   // --- Lo que el usuario elige ---
   const [materials, setMaterials] = useState(DEFAULT_MATERIALS)
-  const [servicios, setServicios] = useState(DEFAULT_SERVICIOS)
+  const [servicios, setServicios] = useState([])
   const [location, setLocation] = useState(DEFAULT_LOCATION)
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState(DEFAULT_SORT)
@@ -44,6 +43,7 @@ export default function ExplorarPedidos() {
       location,
       page,
       pageSize: PAGE_SIZE,
+      estado: 'abierto', // esta vista solo muestra pedidos abiertos
     })
       .then((data) => {
         if (ignore) return
@@ -61,7 +61,7 @@ export default function ExplorarPedidos() {
     return () => {
       ignore = true
     }
-  }, [debouncedQuery, sort, materials, location, servicios, page])
+  }, [debouncedQuery, sort, materials, location, page])
 
   // --- Handlers: cualquier cambio de búsqueda/filtro/orden vuelve a la página 1 ---
   // (si no, podrías pedir la página 3 de una lista que ahora tiene solo 1)
@@ -129,8 +129,8 @@ export default function ExplorarPedidos() {
       <div className="flex flex-col lg:flex-row items-start gap-7">
         <FiltersSidebar
           materials={materials}
-          location={location}
           servicios={servicios}
+          location={location}
           onToggleMaterial={toggleMaterial}
           onToggleServicios={toggleServicios}
           onChangeLocation={handleChangeLocation}
