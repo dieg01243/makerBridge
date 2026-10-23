@@ -11,7 +11,7 @@ export const ORDER_DEFAULTS = {
   statusLabels: {
     abierto: 'Abierto a Cotizaciones',
   },
-  client: { name: 'Nombre de usuario', verified: false },
+  client: { name: 'Martin', verified: false },
   file: { icon: 'check_circle', iconClass: 'text-[#006878]', label: 'STL Manifold OK (32.4 MB)' },
   deadlineIcon: 'event',
   image: {

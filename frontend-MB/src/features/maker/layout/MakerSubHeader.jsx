@@ -1,6 +1,6 @@
 import Icon from '../components/Icon'
 
-export default function MakerSubHeader({ activeOrders = 42 }) {
+export default function MakerSubHeader({ activeOrders = 6 }) {
   return (
     <div className="w-full bg-[#f5ecdf] border-b border-[#ebdccb] px-6 py-2.5">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-[13px]">

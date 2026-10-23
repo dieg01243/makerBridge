@@ -4,7 +4,7 @@ export const MATERIALS = [
   { id: 'pla', label: 'PLA' },
   { id: 'petg', label: 'PETG' },
   { id: 'tpu', label: 'TPU Flexible' },
-  { id: 'cad', label: 'Servicio CAD Incluido' },
+  /* { id: 'cad', label: 'Servicio CAD Incluido' }, */
 ]
 
 export const LOCATIONS = [

@@ -130,25 +130,28 @@ const TXT_CORAL = 'text-brand-dark font-semibold bg-brand-lightBg/20'
 
 const compareRows = [
   { label: 'Entrega de pieza física terminada', cells: [{ v: '✓', c: OK }, { v: '✓', c: OK_CORAL }, { v: '—', c: NONE }] },
-  { label: 'Modelado CAD desde cero o plano', cells: [{ v: '—', c: NONE }, { v: '✓', c: OK_CORAL }, { v: '✓', c: OK }] },
+  { label: 'Diseño 3D desde cero o plano', cells: [{ v: '—', c: NONE }, { v: '✓', c: OK_CORAL }, { v: '✓', c: OK }] },
   { label: 'Rondas de corrección / revisión', cells: [{ v: '—', c: NONE }, { v: 'Hasta 2 rondas', c: TXT_CORAL }, { v: 'Hasta 3 rondas', c: 'text-brand-dark font-semibold' }] },
-  { label: 'Archivos fuente editables (.STEP, .CAD)', cells: [{ v: '—', c: NONE }, { v: 'Opcional (+15%)', c: OK_CORAL }, { v: '✓ Incluido', c: OK }] },
-  { label: 'Asesoramiento en selección de polímeros / resinas', cells: [{ v: '✓', c: OK }, { v: '✓ Avanzado', c: OK_CORAL }, { v: 'Solo especificación', c: NONE }] },
+  { label: 'Asesoramiento en eleccin de materiales', cells: [{ v: '✓', c: OK }, { v: '✓ Avanzado', c: OK_CORAL }, { v: 'Solo especificación', c: NONE }] },
   { label: 'Tiempo promedio de producción', cells: [{ v: '24 a 48 hs', c: TXT }, { v: '4 a 7 días hábiles', c: TXT_CORAL }, { v: '2 a 4 días hábiles', c: TXT }] },
 ]
 
 const faqs = [
   {
-    q: "¿En qué formatos debo enviar mi archivo si elijo 'Solo Impresión'?",
-    a: 'Aceptamos formatos estándar como .STL, .OBJ y .STEP (o .STP). Te recomendamos exportar tus archivos en escala 1:1 en milímetros y con una malla poligonal optimizada para evitar faceteado visible en la pieza final.',
+    q: "¿Qué servicio me conviene?",
+    a: 'Si ya tenés el archivo 3D → Impresión 3D, Si no tenés el archivo y querés la pieza → Diseño + Impresión \n ,Si solo querés el archivo para imprimirlo vos → Solo Diseño 3D',
   },
   {
     q: '¿Qué materiales tienen disponibles para imprimir?',
-    a: 'Contamos con un catálogo diverso que incluye PLA de alta precisión, PETG (resistente a la intemperie y apto mecánico), ABS, ASA con protección UV, TPU flexible y Resinas fotosensibles de alta definición (tecnología SLA/MSLA).',
+    a: 'Contamos con un catálogo diverso que incluye PLA, PETG (resistente a la intemperie y apto mecánico), TPU flexible entre otros que podrian ofrecer los Makers.',
   },
   {
-    q: '¿Qué pasa si mi diseño no se ajusta bien tras recibirlo?',
-    a: 'En el servicio de "Imprimir + Diseñar", contamos con garantía de ajuste funcional: si respetaste las medidas que brindaste y la pieza no cumple con la tolerancia estipulada, rehacemos la iteración sin costo de diseño adicional.',
+    q: '¿Cuánto cuesta? ',
+    a: 'Depende del tamaño, el material y si necesita diseño. Pedir una cotización es gratis y no te compromete a nada.',
+  },
+  {
+    q: '¿Cómo sé que material seleccionar? ',
+    a: 'PLA para decoración y prototipos, PETG para repuestos resistentes y TPU para piezas flexibles. Pero si no sabés como elegir, el maker te puede recomendar.',
   },
 ]
 

@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         ],
       },
 
-      ...(import.meta.env.DEV
+    ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
           element: <ClienteLayout />,
@@ -89,7 +89,7 @@ const router = createBrowserRouter([
             { path: 'mi-perfil', element: <PerfilPrivado /> }],
             
         }]
-        : []),
+        : []), 
       /* ------------------------------------------------------------------------------------------------------------------ */
       {
         path: '/maker',

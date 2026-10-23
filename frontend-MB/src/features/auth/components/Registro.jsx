@@ -271,7 +271,7 @@ export default function Registro({ onSubmit, onGoogle, error, errorCampo, loadin
         </button>
 
         <p className="reg-login-link">
-          ¿Ya tenés una cuenta? <Link to="/Login">Iniciar sesión</Link>
+          ¿Ya tenés una cuenta? <Link to="/login">Iniciar sesión</Link>
         </p>
       </section>
     </main>
