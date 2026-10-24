@@ -1,0 +1,85 @@
+.cliente-layout [data-order-theme='client'] {
+  border-color: var(--color-surface-border);
+  color: var(--color-brand-dark);
+}
+
+.cliente-layout [data-order-theme='client'] > div:first-child {
+  background-color: var(--color-brand-accentBlue);
+}
+
+.cliente-layout [data-order-theme='client'] h3 {
+  color: var(--color-brand-dark);
+}
+
+.cliente-layout [data-order-theme='client'] h3:hover {
+  color: var(--color-brand-accentBlue);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='muted'] {
+  color: var(--color-brand-graySub);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='strong'] {
+  color: var(--color-brand-dark);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='code'],
+.cliente-layout [data-order-theme='client'] [data-order-part='specifications'],
+.cliente-layout [data-order-theme='client'] [data-order-part='preview'],
+.cliente-layout [data-order-theme='client'] [data-order-part='file'] {
+  background-color: var(--color-surface-cardMuted);
+  border-color: var(--color-surface-border);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='image'] {
+  background-color: var(--color-surface-border);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='description'] {
+  color: var(--color-brand-graySub);
+}
+
+.cliente-layout [data-order-theme='client'] [class~='text-[#e06d53]'],
+.cliente-layout [data-order-theme='client'] [class~='text-brand-primary'] {
+  color: var(--color-brand-accentBlue);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='footer'] {
+  border-color: var(--color-surface-border);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='action'] {
+  background-color: var(--color-brand-accentBlue);
+  box-shadow: 0 4px 10px -3px rgb(74 142 201 / 25%);
+}
+
+.cliente-layout [data-order-theme='client'] [data-order-part='action']:hover {
+  background-color: var(--color-brand-accentBlueHover);
+}
+
+.cliente-layout footer {
+  background-color: var(--color-surface-cardMuted);
+  border-color: var(--color-surface-border);
+  color: var(--color-brand-graySub);
+}
+
+.cliente-layout footer [class*='border-stone-300'] {
+  border-color: var(--color-surface-border);
+}
+
+.cliente-layout footer [class*='bg-stone-200'] {
+  background-color: var(--color-surface-border);
+}
+
+.cliente-layout footer h3 {
+  color: var(--color-brand-dark);
+}
+
+.cliente-layout footer p,
+.cliente-layout footer ul {
+  color: var(--color-brand-graySub);
+}
+
+.cliente-layout footer a:hover {
+  color: var(--color-brand-accentBlue);
+}
