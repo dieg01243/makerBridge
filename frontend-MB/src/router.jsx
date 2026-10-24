@@ -19,6 +19,7 @@ import MakerLayout from './features/maker/layout/MakerLayout'
 import ExplorarPedidos from './features/maker/page/ExplorarPedidos'
 import CotizarSolicitud from './features/maker/page/CotizarSolicitud'
 import MisTrabajos from './features/maker/page/MisTrabajos'
+import MisMensajes from './features/maker/page/Mensajes'
 
 
 /* --------------------------Rutas del cliente -------------------------*/
@@ -102,6 +103,7 @@ const router = createBrowserRouter([
         children: [{ index: true, element: <ExplorarPedidos /> },
                    { path: 'cotizar/:id', element: <CotizarSolicitud /> },
                    { path: 'mis-trabajos', element: <MisTrabajos /> },
+                   { path: 'mis-mensajes', element: <MisMensajes /> },
           
         ],
       },
@@ -112,6 +114,7 @@ const router = createBrowserRouter([
           children: [{ index: true, element: <ExplorarPedidos /> },
                      { path: 'cotizar/:id', element: <CotizarSolicitud /> },
                      { path: 'mis-trabajos', element: <MisTrabajos /> },
+                     { path: 'mis-mensajes', element: <MisMensajes /> },
           ],
         }]
         : []),

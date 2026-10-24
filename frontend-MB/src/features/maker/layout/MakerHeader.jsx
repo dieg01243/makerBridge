@@ -3,6 +3,7 @@ import{NavLink} from 'react-router-dom'
 import { useState } from 'react';
 const navLinks = [
   { label: 'Mis trabajos', to: '/maker/mis-trabajos'},
+  { label: 'Mis Mensajes', to: '/maker/mis-mensajes'},
 ]
 const navLinkClasses = ({ isActive }) =>
   `px-3.5 py-2 text-sm rounded-lg transition-colors relative ${isActive
