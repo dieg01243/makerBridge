@@ -29,21 +29,6 @@ export default function PriceField({ value, onChange }) {
         />
         <span className="absolute right-3.5 text-xs font-bold text-gray-400 font-mono uppercase">ARS</span>
       </div>
-
-      {/* Desglose */}
-      <div className="mt-2 p-3 rounded-lg bg-[#FAF6F0] border border-[#ECDDC7] flex flex-col gap-1.5 text-xs">
-        <div className="flex items-center justify-between text-gray-600">
-          <span>Comisión de plataforma ({COMMISSION_RATE * 100}%):</span>
-          <span className="font-mono text-gray-500">- {formatARS(commission)}</span>
-        </div>
-        <div className="pt-2 mt-1 border-t border-[#ECDDC7] flex items-center justify-between font-semibold">
-          <span className="text-gray-900 flex items-center gap-1.5">
-            <Icon name="account_balance_wallet" className="text-brand-primary text-[16px]" />
-            Neto a recibir en tu cuenta:
-          </span>
-          <span className="font-mono text-sm font-bold text-brand-primary">{formatARS(net)}</span>
-        </div>
-      </div>
     </div>
   )
 }

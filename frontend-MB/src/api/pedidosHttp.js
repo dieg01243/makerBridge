@@ -22,3 +22,10 @@ export async function getPedidos({ q, sort, materials, location, page, pageSize,
   const { data } = await client.get('/pedidos/', { params })
   return data // { count, results }
 }
+
+
+// GET /pedidos/:id -> fila cruda del backend
+export async function getPedidoById(id) {
+  const { data } = await client.get(`/pedidos/${id}`)
+  return data
+}

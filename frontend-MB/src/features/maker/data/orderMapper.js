@@ -23,12 +23,23 @@ export function timeAgo(value) {
   if (days < 30) return `Publicado hace ${plural(days, 'día', 'días')}`
   return `Publicado hace ${plural(months, 'mes', 'meses')}`
 }
+export const formatCode = (id) => `#MK-${id}`
+
+export const formatQuantity = (n) => `${n} ${n === 1 ? 'unidad' : 'unidades'}`
+
+export function getFileName(url = '') {
+  try {
+    return decodeURIComponent(String(url).split('?')[0].split('/').pop()) || 'archivo.stl'
+  } catch {
+    return 'archivo.stl'
+  }
+}
 
 // Fila de la tabla `pedidos` -> props que espera <OrderCard />
 export function toOrderCard(row) {
   return {
     id: row.id_pedido,
-    code: `#MK-${row.id_pedido}`,
+    code: formatCode(row.id_pedido),
     accentClass: D.accentClass,
     publishedAgo: timeAgo(row.fecha_creacion),
     status: {
@@ -39,9 +50,9 @@ export function toOrderCard(row) {
     // Si se hace un JOIN con usuarios y devolvés `nombre_usuario`, se usa acá.
     client: { ...D.client, name: row.nombre_usuario ?? D.client.name },
     location: row.ubicacion,
-    file: D.file, /* Probablemente despues deba cambiarlo por el verdadero nombre del archivo */
+    file: { ...D.file, label: row.archivo_url ? getFileName(row.archivo_url) : D.file.label },
     specs: [
-      { label: 'Cantidad', value: `${row.cantidad} ${row.cantidad === 1 ? 'unidad' : 'unidades'}` },
+      { label: 'Cantidad', value: formatQuantity(row.cantidad) },
       { label: 'Material', value: row.material },
       { label: 'Color / Acabado', value: row.color },
     ],

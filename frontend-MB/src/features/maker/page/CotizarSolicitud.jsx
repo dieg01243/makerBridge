@@ -1,18 +1,58 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Icon from '../components/Icon'
 import OrderSummaryCard from '../components/TarjetaSolicitud'
 import PlatformGuarantee from '../components/CartelVerificacion'
 import QuoteForm from '../components/FormCotizacion'
 import ordersData from '../data/orders.json'
+/* import { getPedidoById } from '../../../api/pedidosHttp' */
 import { toOrderDetail } from '../data/orderDetailMapper'
 
 export default function PostularPedido() {
   const { id } = useParams()
 
   // Cuando tengas API: reemplazá este find por un fetch del pedido `id`.
-  const row = ordersData.find((o) => String(o.id_pedido) === id)
+   const row = ordersData.find((o) => String(o.id_pedido) === id)
+/* 
+  const [row, setRow] = useState(null)
+  const [status, setStatus] = useState('loading') // 'loading' | 'ok' | 'error'
 
-  if (!row) {
+  useEffect(() => {
+    let cancelado = false
+    setStatus('loading')
+
+    getPedidoById(id)
+      .then((data) => {
+        if (cancelado) return
+        setRow(data)
+        setStatus('ok')
+      })
+      .catch(() => {
+        if (!cancelado) setStatus('error')
+      })
+
+    return () => {
+      cancelado = true
+    }
+  }, [id])
+ */
+
+   if (!row) {
+     return (
+       <div className="bg-white rounded-xl border border-[#ECDDC7] p-8 text-center shadow-sm">
+         <p className="text-gray-700 font-semibold">No encontramos el pedido #MK-{id}.</p>
+         <Link to=".." className="inline-block mt-3 text-sm font-bold text-brand-primary hover:underline">
+           Volver a Explorar Pedidos
+         </Link>
+       </div>
+     )
+   }
+
+ /*  if (status === 'loading') {
+    return <p className="text-center text-gray-500 py-10">Cargando pedido...</p>
+  }
+
+  if (status === 'error' || !row) {
     return (
       <div className="bg-white rounded-xl border border-[#ECDDC7] p-8 text-center shadow-sm">
         <p className="text-gray-700 font-semibold">No encontramos el pedido #MK-{id}.</p>
@@ -21,7 +61,7 @@ export default function PostularPedido() {
         </Link>
       </div>
     )
-  }
+  } */
 
   const order = toOrderDetail(row)
 
