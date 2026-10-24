@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const inputClass =
-  'w-full bg-white text-brand-dark text-base rounded-full border border-gray-400/80 px-5 py-3 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 transition shadow-sm outline-none';
+  'w-full bg-white text-brand-dark text-base rounded-full border border-surface-border px-5 py-3 focus:border-brand-accentBlue focus:ring-2 focus:ring-brand-accentBlue/30 transition shadow-sm outline-none';
 
 const Label = ({ children }) => (
   <label className="block text-base font-bold text-brand-dark mb-2">{children}</label>
@@ -30,12 +30,12 @@ const DatosPersonales = ({ user, onSave }) => {
   };
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-card border border-brand-border-subtle">
-      <div className="border-b border-brand-border-subtle/80 pb-5 mb-8">
+    <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-card border border-surface-border">
+      <div className="border-b border-surface-border pb-5 mb-8">
         <h2 className="text-xl sm:text-2xl font-bold text-brand-dark tracking-tight">
           Información Personal &amp; Facturación
         </h2>
-        <p className="text-sm text-brand-dark-muted mt-1">
+        <p className="text-sm text-brand-graySub mt-1">
           Estos datos se utilizarán para la emisión de comprobantes y la entrega física de tus piezas 3D.
         </p>
       </div>
@@ -104,8 +104,8 @@ const DatosPersonales = ({ user, onSave }) => {
         </div>
 
         {/* Preferencias */}
-        <div className="pt-4 border-t border-brand-border-subtle/80 space-y-3">
-          <span className="block text-sm font-bold uppercase tracking-wider text-brand-dark-muted mb-2">
+        <div className="pt-4 border-t border-surface-border space-y-3">
+          <span className="block text-sm font-bold uppercase tracking-wider text-brand-graySub mb-2">
             Preferencias de aviso
           </span>
           {[
@@ -118,7 +118,7 @@ const DatosPersonales = ({ user, onSave }) => {
                 name={name}
                 checked={form[name]}
                 onChange={handleChange}
-                className="w-5 h-5 rounded text-brand-terracota border-gray-300 focus:ring-brand-terracota"
+                className="w-5 h-5 rounded text-brand-accentBlue border-gray-300 focus:ring-brand-accentBlue"
               />
               <span className="text-sm font-medium text-brand-dark">{label}</span>
             </label>
@@ -130,13 +130,13 @@ const DatosPersonales = ({ user, onSave }) => {
           <button
             type="button"
             onClick={() => setForm({ ...form })}
-            className="w-full sm:w-auto px-7 py-3 rounded-full text-sm font-bold text-brand-dark-muted bg-brand-crema hover:bg-brand-crema-dark hover:text-brand-dark transition"
+            className="w-full sm:w-auto px-7 py-3 rounded-full text-sm font-bold text-brand-graySub bg-page-bg hover:bg-surface-cardMuted hover:text-brand-dark transition"
           >
             Descartar cambios
           </button>
           <button
             type="submit"
-            className="w-full sm:w-auto px-9 py-3 rounded-full text-sm font-bold text-white bg-brand-terracota hover:bg-brand-terracota-hover shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-9 py-3 rounded-full text-sm font-bold text-white bg-brand-accentBlue hover:bg-brand-accentBlueHover shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />

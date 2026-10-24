@@ -9,7 +9,7 @@ import ServiciosPage from './features/public/pages/ServiciosPage.jsx'
 import ComoFunciona from './features/public/pages/ComoFunciona'
 import ExplorarProductos from './features/public/pages/ExplorarProductos'
 */
-/* --------------------------Rutas de autenticación -------------------------*/
+/* -------------------------- Rutas de autenticación -------------------------*/
 /* import AuthLayout from './features/auth/layout/AuthLayout' */  /* Plantilla que comparten las paginas de autenticacion */
 import RutaProtegida from './features/auth/pages/RutaProtegida.jsx'
 import Login from './features/auth/pages/LoginPage'
@@ -21,7 +21,7 @@ import CotizarSolicitud from './features/maker/page/CotizarSolicitud'
 import MisTrabajos from './features/maker/page/MisTrabajos'
 
 
-/* --------------------------Rutas del cliente -------------------------*/
+/* -------------------------- Rutas del cliente -------------------------*/
 import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 import Solicitudes from './features/Cliente/Paginas/MisSolicitudes.jsx'
 import NuevaSolicitud from './features/Cliente/Paginas/NuevaSolicitud.jsx'
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         }]
         : []), */
 
-      /* --------------------- MisSolicitudes / Nueva solicitud--------------------------- */
+      /* --------------------- MisSolicitudes / Nueva solicitud / Perfil Privado --------------------------- */
 
         {
         path: '/cliente',

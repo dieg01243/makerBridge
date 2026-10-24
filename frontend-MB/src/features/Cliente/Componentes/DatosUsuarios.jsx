@@ -29,7 +29,7 @@ const DatosUsuario = ({ user }) => {
   };
 
   return (
-    <div className="bg-brand-blue-card rounded-3xl p-6 sm:p-7 text-white shadow-soft">
+    <div className="bg-brand-accentBlue rounded-3xl p-6 sm:p-7 text-white shadow-soft">
       <div className="flex items-center justify-between mb-5">
         <h3 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
           <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ const DatosUsuario = ({ user }) => {
             <button
               type="button"
               onClick={handleCopy}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-bold text-brand-blue hover:text-brand-dark px-2 py-1 rounded bg-brand-crema transition"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-bold text-brand-accentBlue hover:text-brand-accentBlueHover px-2 py-1 rounded bg-page-bg transition"
             >
               {copiado ? 'Copiado' : 'Copiar'}
             </button>
@@ -71,7 +71,7 @@ const DatosUsuario = ({ user }) => {
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               {user.estado}
             </span>
-            <span className="text-xs text-brand-dark-muted font-medium bg-slate-100 px-2.5 py-0.5 rounded-full">
+            <span className="text-xs text-brand-graySub font-medium bg-slate-100 px-2.5 py-0.5 rounded-full">
               {user.penalizaciones}
             </span>
           </div>
@@ -95,7 +95,7 @@ const DatosUsuario = ({ user }) => {
               defaultValue="supersecurepassword123"
               className="w-full bg-white text-brand-dark text-sm font-semibold py-2.5 px-4 rounded-full border-0 shadow-sm tracking-widest focus:ring-0"
             />
-            <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-brand-dark-muted">
+            <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-brand-graySub">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>

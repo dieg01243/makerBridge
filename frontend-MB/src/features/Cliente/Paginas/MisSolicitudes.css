@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @layer components {
-  .btn-primary {
+  .cliente-layout .btn-primary {
     border-radius: calc(infinity * 1px);
-    background-color: var(--color-violet-500);
+    background-color: var(--color-brand-accentBlue);
     padding-inline: --spacing(5);
     padding-block: --spacing(2);
     font-weight: var(--font-weight-semibold);
@@ -11,7 +11,7 @@
     box-shadow: var(--shadow-md);
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-violet-700);
+        background-color: var(--color-brand-accentBlueHover);
       }
     }
   }

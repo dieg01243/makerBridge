@@ -26,9 +26,9 @@ const estadoInicial = {
 
 // Clases compartidas por todos los campos
 const claseCampo =
-  'w-full rounded-full border border-[#E3DDCF] bg-[#F8F6F0] px-4 py-2.5 text-sm text-[#2B2B2B] placeholder:text-[#8A8578] focus-visible:border-[#E07A5F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/40'
+  'w-full rounded-full border border-surface-border bg-surface-cardMuted px-4 py-2.5 text-sm text-brand-dark placeholder:text-brand-graySub focus-visible:border-brand-accentBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue/40'
 
-const claseLabel = 'text-xs font-medium text-[#2B2B2B] '
+const claseLabel = 'text-xs font-medium text-brand-dark '
 const estilo = 'flex flex-col gap-1.5'
 
 function SubirPedido() {
@@ -172,7 +172,7 @@ function SubirPedido() {
 
   /* ------------------------------------------------ Vista --------------------------------------------------- */
   return (
-    <div className="min-h-screen bg-[#F8F6F1] px-4 py-8 sm:px-6 lg:px-8">
+    <div className="bg-page-bg px-4 py-8 sm:px-6 lg:px-8">
       <form onSubmit={enviar} className="mx-auto w-full max-w-5xl">
         {/* Tarjeta del formulario */}
         <div className="rounded-3xl bg-white p-5 shadow-sm sm:p-8">
@@ -303,7 +303,7 @@ function SubirPedido() {
                 value={formulario.observaciones}
                 onChange={handleChange}
                 rows={4}
-                className='min-h-28 w-full resize-y rounded-2xl border border-[#E3DDCF] bg-[#F8F6F0] px-4 py-2.5 text-sm text-[#2B2B2B] placeholder:text-[#8A8578] focus-visible:border-[#E07A5F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/40'
+                className="min-h-28 w-full resize-y rounded-2xl border border-surface-border bg-surface-cardMuted px-4 py-2.5 text-sm text-brand-dark placeholder:text-brand-graySub focus-visible:border-brand-accentBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue/40"
               />
           </div>
           
@@ -319,18 +319,18 @@ function SubirPedido() {
             onDrop={handleDrop}
             className={`mt-8 flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-4 py-10 text-center transition-colors sm:py-14 ${
               arrastrando
-                ? 'border-[#6E9B72] bg-[#DCE8D8]'
-                : 'border-[#A8C0A4] bg-[#E6EEE2]'
+                ? 'border-brand-accentBlue bg-brand-accentBlueLight'
+                : 'border-brand-accentBlue/50 bg-brand-accentBlueLight/60'
             }`}
           >
-            <div className="flex size-12 items-center justify-center rounded-full bg-white text-[#4A7A93]">
+            <div className="flex size-12 items-center justify-center rounded-full bg-white text-brand-accentBlue">
               <IconoCubo />
             </div>
 
-            <h2 className="mt-1 text-base font-bold text-[#2B2B2B] sm:text-lg">
+            <h2 className="mt-1 text-base font-bold text-brand-dark sm:text-lg">
               Subí tu archivo STL
             </h2>
-            <p className="text-xs text-[#6B6B63]">
+            <p className="text-xs text-brand-graySub">
               Formatos soportados: STL, OBJ, STEP, 3MF (máx. {TAMANO_MAXIMO_MB} MB)
             </p>
 
@@ -344,12 +344,12 @@ function SubirPedido() {
             />
 
             {archivo ? (
-              <div className="mt-2 flex max-w-full items-center gap-3 rounded-full bg-white px-4 py-2 text-xs font-medium text-[#2B2B2B]">
+              <div className="mt-2 flex max-w-full items-center gap-3 rounded-full bg-white px-4 py-2 text-xs font-medium text-brand-dark">
                 <span className="truncate">{archivo.name}</span>
                 <button
                   type="button"
                   onClick={quitarArchivo}
-                  className="shrink-0 cursor-pointer text-[#E07A5F] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/40"
+                  className="shrink-0 cursor-pointer text-brand-accentBlue hover:text-brand-accentBlueHover hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue/40"
                 >
                   Quitar
                 </button>
@@ -358,7 +358,7 @@ function SubirPedido() {
               <button
                 type="button"
                 onClick={() => inputArchivo.current?.click()}
-                className="mt-2 cursor-pointer rounded-full bg-white px-5 py-2 text-xs font-medium text-[#2B2B2B] shadow-sm transition-colors hover:bg-[#F8F6F0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6E9B72]"
+                className="mt-2 cursor-pointer rounded-full bg-white px-5 py-2 text-xs font-medium text-brand-dark shadow-sm transition-colors hover:bg-surface-cardMuted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue"
               >
                 Seleccionar desde mi dispositivo
               </button>
@@ -383,18 +383,18 @@ function SubirPedido() {
               onDrop={handleDropReferencias}
               className={`mt-8 flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-4 py-10 text-center transition-colors sm:py-12 ${
                 arrastrandoRef
-                  ? 'border-[#C9A96B] bg-[#F3E8D0]'
-                  : 'border-[#D8C7A0] bg-[#F8F2E6]'
+                  ? 'border-brand-accentBlue bg-brand-accentBlueLight'
+                  : 'border-brand-accentBlue/50 bg-brand-accentBlueLight/60'
               }`}
             >
-              <div className="flex size-12 items-center justify-center rounded-full bg-white text-[#B07A2E]">
+              <div className="flex size-12 items-center justify-center rounded-full bg-white text-brand-accentBlue">
                 <IconoImagen />
               </div>
 
-              <h2 className="mt-1 text-base font-bold text-[#2B2B2B] sm:text-lg">
+              <h2 className="mt-1 text-base font-bold text-brand-dark sm:text-lg">
                 Subí una referencia para tu diseño
               </h2>
-              <p className="max-w-md text-xs text-[#6B6B63]">
+              <p className="max-w-md text-xs text-brand-graySub">
                 Fotos, bocetos o planos: JPG, PNG, WEBP o PDF (máx. {TAMANO_MAXIMO_REF_MB} MB
                 cada uno, hasta {MAX_REFERENCIAS} archivos)
               </p>
@@ -413,7 +413,7 @@ function SubirPedido() {
                 type="button"
                 onClick={() => inputReferencia.current?.click()}
                 disabled={referencias.length >= MAX_REFERENCIAS}
-                className="mt-2 cursor-pointer rounded-full bg-white px-5 py-2 text-xs font-medium text-[#2B2B2B] shadow-sm transition-colors hover:bg-[#F8F6F0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A96B] disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-2 cursor-pointer rounded-full bg-white px-5 py-2 text-xs font-medium text-brand-dark shadow-sm transition-colors hover:bg-surface-cardMuted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Seleccionar fotos o archivos
               </button>
@@ -432,18 +432,18 @@ function SubirPedido() {
                           className="h-24 w-full object-cover"
                         />
                       ) : (
-                        <div className="flex h-24 w-full items-center justify-center bg-[#F1EDE3] text-xs font-bold text-[#6B6B63]">
+                        <div className="flex h-24 w-full items-center justify-center bg-surface-cardMuted text-xs font-bold text-brand-graySub">
                           PDF
                         </div>
                       )}
-                      <span className="truncate px-2 py-1.5 text-[11px] text-[#2B2B2B]">
+                      <span className="truncate px-2 py-1.5 text-[11px] text-brand-dark">
                         {r.file.name}
                       </span>
                       <button
                         type="button"
                         onClick={() => quitarReferencia(r.id)}
                         aria-label={`Quitar ${r.file.name}`}
-                        className="absolute right-1.5 top-1.5 flex size-6 cursor-pointer items-center justify-center rounded-full bg-white/90 text-sm font-bold text-[#B3402A] shadow-sm hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/50"
+                        className="absolute right-1.5 top-1.5 flex size-6 cursor-pointer items-center justify-center rounded-full bg-white/90 text-sm font-bold text-red-700 shadow-sm hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50"
                       >
                         ×
                       </button>
@@ -466,14 +466,14 @@ function SubirPedido() {
           <button
             type="button"
             onClick={guardarBorrador}
-            className="cursor-pointer rounded-full border border-[#D9D3C5] bg-white px-6 py-2.5 text-sm font-medium text-[#2B2B2B] transition-colors hover:bg-[#F8F6F0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/40"
+            className="cursor-pointer rounded-full border border-surface-border bg-white px-6 py-2.5 text-sm font-medium text-brand-dark transition-colors hover:bg-surface-cardMuted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue/40"
           >
             Guardar borrador
           </button>
 
           <button
             type="submit"
-            className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-8 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#C9654B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E07A5F]/50 focus-visible:ring-offset-2"
+            className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-brand-accentBlue px-8 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-accentBlueHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accentBlue/50 focus-visible:ring-offset-2"
           >
             Subir pedido
             <svg
@@ -500,7 +500,7 @@ function IconoFlecha() {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-[#6B6B63]"
+      className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-brand-graySub"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -553,4 +553,3 @@ function IconoImagen() {
 }
 
 export default SubirPedido
-

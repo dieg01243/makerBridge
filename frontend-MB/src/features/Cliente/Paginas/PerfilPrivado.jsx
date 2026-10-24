@@ -37,7 +37,7 @@ function PerfilPrivado() {
 
         {avisoGuardado && (
           <p
-            className="mb-6 rounded-2xl border border-brand-border-subtle bg-white px-5 py-4 text-sm font-medium text-brand-dark-muted shadow-card"
+            className="mb-6 rounded-2xl border border-surface-border bg-white px-5 py-4 text-sm font-medium text-brand-graySub shadow-card"
             role="status"
           >
             Los cambios se actualizaron en esta vista de demostración. Todavía no se

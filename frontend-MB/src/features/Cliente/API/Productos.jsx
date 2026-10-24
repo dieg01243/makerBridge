@@ -39,7 +39,7 @@ export function Productos({ titulo, idUsuario }) {
       {error && <p className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">{error}</p>}
       {/* !cargando &&  */!error && ordenados.length === 0 && (
         <p className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-center text-sm text-brand-muted">
-          Todavía no tenés solicitudes.
+          Cargando solicitudes...
         </p>
       )}
 
@@ -49,42 +49,3 @@ export function Productos({ titulo, idUsuario }) {
     </section>
   )
 }
-
-
-/* 
-const productos = servicioProductos.obtener()
-console.log(productos)
-
-export function Productos(props) {
-    const { titulo } = props
-    const [ productos, setProductos ] = useState([])
-
-
-    useEffect(() => {
-        console.log('Api productos montado')
-
-        async function pedir() {
-            try {
-                const productos = await servicioProductos.obtener()
-                console.log(productos)
-                setProductos(productos)
-            } catch (error) {
-                console.error('Error al cargar productos', error)
-            }
-        }
-
-        pedir()
-
-        return () => console.log('Api Productos desmontado')
-    }, [])
-
-
-    return(
-        <div className='body'>
-
-
-
-        </div>
-            
-    )
-} */

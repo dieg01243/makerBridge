@@ -17,9 +17,11 @@
   --color-brand-graySub: #5f6980;
   --color-brand-accentYellow: #f59e0b;
   --color-brand-accentBlue: #4a8ec9;
+  --color-brand-accentBlueHover: #3b77ab;
   --color-brand-accentBlueLight: #eaf3fb;
   --color-brand-accentYellowLight: #fef3c7;
 
+  --color-page-bg: #fcfaf6;
   --color-surface-base: #fbf9f8;
   --color-surface-card: #ffffff;
   --color-surface-cardMuted: #f5f3f0;

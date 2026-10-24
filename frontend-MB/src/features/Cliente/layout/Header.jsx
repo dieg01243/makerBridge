@@ -6,13 +6,13 @@ export default function Header({
   return (
     <div className="mb-8 md:mb-10 text-left">
       <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-dark">
-        {title} {accent && <span className="text-brand-terracota">{accent}</span>}
+        {title} {accent && <span className="text-brand-accentBlue">{accent}</span>}
       </h1>
-      <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-brand-dark-muted font-medium text-sm sm:text-base">
+      <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-brand-graySub font-medium text-sm sm:text-base">
         <p>{description}</p>
         <a
           href="#contacto-soporte"
-          className="inline-flex items-center text-xs font-bold text-brand-blue hover:text-brand-dark underline underline-offset-4 decoration-brand-blue/40 transition self-start sm:self-auto"
+          className="inline-flex items-center text-xs font-bold text-brand-accentBlue hover:text-brand-accentBlueHover underline underline-offset-4 decoration-brand-accentBlue/40 transition self-start sm:self-auto"
         >
           ¿Necesitás asistencia técnica?
         </a>
