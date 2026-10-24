@@ -1,11 +1,13 @@
 import Icon from './Icon'
 import { Link } from 'react-router-dom'
 
-export default function OrderCard({ order, theme = 'maker' }) {
+export default function OrderCard({ order, theme = 'maker'
+ }) {
   const {
     accentClass, code, publishedAgo, status, title, client, location, file,
     specs, deadline, image, description, footerInfo, primaryAction,
   } = order
+
 
   return (
     <article data-order-theme={theme} className="w-full bg-white rounded-2xl border border-[#ebdccb] shadow-sm p-6 hover:shadow-md transition-shadow relative overflow-hidden flex flex-col gap-4">
@@ -92,7 +94,7 @@ export default function OrderCard({ order, theme = 'maker' }) {
 
         <div className="flex items-center gap-2.5 w-full sm:w-auto">
           <Link
-            to={`cotizar/${order.id}`}
+            to={order.actionTo ?? `cotizar/${order.id}`}
             data-order-part="action"
             className="flex-1 sm:flex-none h-10 px-5 rounded-xl bg-brand-primary text-white hover:bg-[#be543c] text-[13px] font-bold shadow-sm shadow-brand-primary/25 transition-all flex items-center justify-center gap-1.5"
           >

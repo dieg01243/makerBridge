@@ -32,7 +32,7 @@ function NotificationButton({ mobile = false, onClick }) {
         </svg>
         <span
           className={`absolute right-0 top-0 h-2.5 w-2.5 rounded-full border-2 ${
-            mobile ? 'border-page-bg' : 'border-page-bg'
+            'border-white'
           } bg-brand-accentBlue`}
         />
       </span>
@@ -77,7 +77,7 @@ export default function Navbar({ user = DEFAULT_USER }) {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <div className="sticky top-0 z-50 border-b-2 border-brand-accentBlue bg-page-bg/90 shadow-md backdrop-blur-sm">
+    <div className="sticky top-0 z-50 border-b-2 border-brand-accentBlue bg-white shadow-md backdrop-blur-sm">
       <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <NavLink to="/cliente" title="MakerBridge 3D HUB">
           <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#568EA6] shadow-sm transition group-hover:scale-105">
@@ -91,14 +91,14 @@ export default function Navbar({ user = DEFAULT_USER }) {
         <nav
           className={`${
             menuOpen ? 'flex' : 'hidden'
-          } absolute inset-x-0 top-full flex-col gap-1 border-b-2 border-brand-accentBlue bg-page-bg px-4 py-3 text-sm text-brand-graySub sm:px-6 xl:static xl:ml-10 xl:mr-auto xl:flex xl:flex-row xl:items-center xl:gap-2 xl:border-b-0 xl:bg-transparent xl:p-0`}
+          } absolute inset-x-0 top-full flex-col gap-1 border-b-2 border-brand-accentBlue bg-white px-4 py-3 text-sm text-brand-graySub sm:px-6 xl:static xl:ml-10 xl:mr-auto xl:flex xl:flex-row xl:items-center xl:gap-2 xl:border-b-0 xl:bg-transparent xl:p-0`}
         >
           {NAV_LINKS.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               onClick={closeMenu}
-              className="rounded-lg px-3.5 py-2 font-bold transition hover:text-brand-accentBlue"
+              className="rounded-lg px-3.5 py-2 font-bold transition hover:text-brand-accentBlue hover:bg-surface-cardMuted"
             >
               {label}
             </NavLink>

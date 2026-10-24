@@ -26,6 +26,7 @@ import PerfilPrivado from './features/Cliente/Paginas/PerfilPrivado.jsx'
 import Solicitudes from './features/Cliente/Paginas/MisSolicitudes.jsx'
 import NuevaSolicitud from './features/Cliente/Paginas/NuevaSolicitud.jsx'
 import ClienteLayout from './features/Cliente/layout/ClienteLayout.jsx'
+import Cotizaciones from './features/Cliente/Paginas/Cotizaciones.jsx'
 
 
 const router = createBrowserRouter([
@@ -74,20 +75,30 @@ const router = createBrowserRouter([
         children: [{ index: true, element: <Solicitudes /> },
                    { path: 'nueva-solicitud', element: <NuevaSolicitud /> },
                    { path: 'mi-perfil', element: <PerfilPrivado /> },
-          
+                   { path: 'cotizaciones/:idPedido', element: <Cotizaciones /> },
+
         ],
       },
+      /* {
+        path: '/cotizaciones/:idPedido',
+        element: (
+          <RutaProtegida rol={['cliente']}>
+            <ClienteLayout />
+          </RutaProtegida>
+        ),
+        children: [{ index: true, element: <Cotizaciones /> }],
+      }, */
 
       ...(import.meta.env.DEV
         ? [{
           path: '/dev/cliente',
           element: <ClienteLayout />,
           children: [
-            
             { index: true, element: <Solicitudes /> },
             { path: 'nueva-solicitud', element: <NuevaSolicitud /> },
-            { path: 'mi-perfil', element: <PerfilPrivado /> }],
-            
+            { path: 'mi-perfil', element: <PerfilPrivado /> },
+            { path: 'cotizaciones/:idPedido', element: <Cotizaciones /> },
+          ],
         }]
         : []),
       /* ------------------------------------------------------------------------------------------------------------------ */

@@ -1,3 +1,8 @@
+.cliente-layout {
+  --color-page-bg: #fbf7f0;
+  background-color: #fbf7f0;
+}
+
 .cliente-layout [data-order-theme='client'] {
   border-color: var(--color-surface-border);
   color: var(--color-brand-dark);

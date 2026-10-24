@@ -18,12 +18,16 @@ const ESTADOS = {
    Es el único lugar que conoce los campos de la API: si cambian, se ajusta acá. */
 const aOrder = (p) => {
   const estado = p.estado ? ESTADOS.finalizado : ESTADOS.pendiente
+  const id = p.idPedido ?? p.id
 
   return {
+    id,
+    actionTo: `cotizaciones/${id}`,
     accentClass: estado.acento,
-    code: `#${p.idPedido}`,
+    code: `#${id}`,
     publishedAgo: `Solicitado el ${aFecha(p.fechaCreacion)}`,
     status: { className: estado.badge, dotClass: estado.punto, label: estado.label },
+
     // La API no trae nombre de producto: si agregan `nombre`, se usa solo
     title: p.nombre ?? `Pedido de ${p.cantidad} ${Number(p.cantidad) === 1 ? 'unidad' : 'unidades'}`,
     client: { verified: false, name: `Cliente #${p.idUsuario}` },
@@ -36,21 +40,16 @@ const aOrder = (p) => {
       
     ].filter((s) => s.value !== '' && s.value != null),
     deadline: { icon: 'event', date: aFecha(p.fechaLimite) },
-    image: { src: p.archivoUrl, alt: `Pedido ${p.idPedido}`, tag: 'Archivo' },
+    image: { src: p.archivoUrl, alt: `Pedido ${id}`, tag: 'Archivo' },
     description: p.descripcion ?? '',
     footerInfo: { variant: 'info', text: p.archivoUrl ? 'Archivo adjunto disponible' : 'Sin archivo adjunto' },
-    primaryAction: 'Ver detalle',
+    primaryAction: 'Ver cotizaciones',
   }
 }
 
 
-/* Usa OrderCard TAL CUAL. OrderCard tiene un único botón y no expone onClick,
-   así que el click se captura en el contenedor (delegación de eventos). */
-export default function TarjetaSolicitud({ producto, onVerDetalle }) {
+export default function TarjetaSolicitud({ producto }) {
   return (
-    
-      <div onClick={(e) => e.target.closest('button') && onVerDetalle?.(producto)}>
-        <OrderCard order={aOrder(producto)} theme="client" />
-      </div>
+    <OrderCard order={aOrder(producto)} theme="client" />
   )
 }

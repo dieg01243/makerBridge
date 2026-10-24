@@ -77,3 +77,44 @@ body {
   background-image: radial-gradient(rgba(224, 109, 83, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+/* Pegá esto en tu index.css (Tailwind v4) SOLO si tu proyecto no define ya estos tokens.
+   Si usás Tailwind v3, pasá los colores a tailwind.config.js (extend.colors) y las 2 @utility a clases CSS. */
+
+/* Tema (reemplaza al tailwind.config del HTML original - Tailwind v4) */
+@theme {
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --color-brand-50: #f0f7fc;
+  --color-brand-100: #eaf3fb;
+  --color-brand-200: #cce3f5;
+  --color-brand-400: #6fa5d6;
+  --color-brand-500: #4a8ec9;
+  --color-brand-600: #3b77ab;
+  --color-brand-700: #2f5f8a;
+
+  --color-surface-cream: #faf8f5;
+  --color-surface-card: #ffffff;
+  --color-surface-muted: #f5f3f0;
+  --color-surface-border: #eae6e2;
+
+  --color-ink-primary: #1e2432;
+  --color-ink-secondary: #5f6980;
+  --color-ink-muted: #8f99a8;
+}
+
+@layer base {
+  body {
+    @apply bg-surface-cream text-ink-primary font-sans antialiased selection:bg-brand-100 selection:text-brand-700;
+  }
+}
+
+@utility wireframe-accent-box {
+  border: 2px solid #4a8ec9;
+  box-shadow: 0 10px 25px -5px rgba(74, 142, 201, 0.08), 0 8px 10px -6px rgba(74, 142, 201, 0.04);
+}
+
+@utility technical-grid-bg {
+  background-image: radial-gradient(rgba(74, 142, 201, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
