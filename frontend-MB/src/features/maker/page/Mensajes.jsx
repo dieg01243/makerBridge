@@ -354,18 +354,25 @@ function ChatListItem({ chat, counterpart, unread, active, onSelect }) {
     <button
       type="button"
       onClick={() => onSelect(chat.id)}
-      className={`text-left cursor-pointer p-3.5 rounded-2xl bg-surface-card transition-all relative overflow-hidden ${
+      className={`text-left cursor-pointer p-2 md:p-3.5 rounded-2xl bg-surface-card transition-all relative overflow-hidden ${
         active ? "shadow-warm-md" : "shadow-warm-sm hover:bg-surface-cardMuted"
       } ${isCompleted && !active ? "opacity-85" : ""}`}
     >
       {active && <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-primary" />}
 
-      <div className={`flex items-start gap-3 ${active ? "pl-1" : ""}`}>
-        <Avatar person={counterpart} showStatus />
+      <div className={`flex items-start justify-center md:justify-start gap-3 ${active ? "md:pl-1" : ""}`}>
+        <div className="relative shrink-0">
+          <Avatar person={counterpart} showStatus />
+          {hasUnread && (
+            <span className="md:hidden absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-primary text-white font-mono text-[10px] flex items-center justify-center font-bold ring-2 ring-surface-card">
+              {unread}
+            </span>
+          )}
+        </div>
 
-        <div className="flex flex-col flex-1 min-w-0">
+        <div className="hidden md:flex flex-col flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-[18px] leading-6.5 font-bold text-brand-dark truncate">{counterpart.name}</span>
+            <span className="text-[18px] leading-[26px] font-bold text-brand-dark truncate">{counterpart.name}</span>
             <span className={`font-mono text-[10px] shrink-0 ${active ? "text-brand-primary font-semibold" : "text-brand-graySub"}`}>
               {formatListTime(lastMessage.createdAt)}
             </span>
@@ -413,7 +420,7 @@ function ChatListItem({ chat, counterpart, unread, active, onSelect }) {
 
 function ChatHeader({ chat, counterpart, orderButtonLabel, onViewOrder }) {
   return (
-    <div className="p-5 bg-surface-cardMuted/90 flex flex-col gap-3.5">
+    <div className="p-3 md:p-5 bg-surface-cardMuted/70 flex flex-col gap-3.5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3.5">
           <Avatar person={counterpart} size="w-12 h-12" showStatus />
@@ -464,7 +471,7 @@ function MessageBubble({ message, chat, viewerRole }) {
   const sender = message.from === "maker" ? chat.maker : chat.client;
 
   return (
-    <div className={`flex items-start gap-3 max-w-[85%] ${isMine ? "self-end flex-row-reverse" : ""}`}>
+    <div className={`flex items-start gap-2 md:gap-3 max-w-[92%] md:max-w-[85%] ${isMine ? "self-end flex-row-reverse" : ""}`}>
       <div
         className={`w-8 h-8 rounded-full flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-1 ${
           isMine ? "bg-brand-primary text-white" : sender.tone
@@ -507,8 +514,8 @@ function MessageComposer({ recipient, onSend }) {
   };
 
   return (
-    <div className="p-4 sm:p-5 bg-surface-card flex flex-col gap-3">
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 w-full">
+    <div className="p-3 md:p-5 bg-surface-card flex flex-col gap-3">
+      <form onSubmit={handleSubmit} className="flex flex-row items-center gap-2 md:gap-3 w-full">
         <div className="relative w-full">
           <input
             type="text"
@@ -523,9 +530,9 @@ function MessageComposer({ recipient, onSend }) {
 
         <button
           type="submit"
-          className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-brand-primary hover:bg-brand-primaryHover text-white font-mono text-sm font-bold flex items-center justify-center gap-2 shrink-0 shadow-warm-md transition-all active:scale-95"
+          className="px-4 sm:px-6 py-3.5 rounded-2xl bg-brand-primary hover:bg-brand-primaryHover text-white font-mono text-sm font-bold flex items-center justify-center gap-2 shrink-0 shadow-warm-md transition-all active:scale-95"
         >
-          Enviar Mensaje
+          <span className="hidden sm:inline">Enviar Mensaje</span>
           <Icon name="send" className="text-[20px]" />
         </button>
       </form>
@@ -659,16 +666,16 @@ export default function MessagesPage({
         />
       </div>
 
-      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <div className="lg:col-span-4 flex flex-col gap-3">
-          <div className="flex items-center justify-between px-1">
+      <div className="w-full grid grid-cols-12 gap-2 md:gap-6 items-start">
+        <div className="col-span-3 md:col-span-4 flex flex-col gap-3 min-w-0">
+          <div className="hidden md:flex items-center justify-between px-1">
             <span className="font-mono text-xs font-semibold text-brand-graySub uppercase tracking-wider">
               Bandeja de Entrada
             </span>
             <span className="font-mono text-[10px] text-brand-graySub">Ordenado por actividad</span>
           </div>
 
-          <div className="flex flex-col gap-2.5 max-h-190 overflow-y-auto pr-1">
+          <div className="flex flex-col gap-2.5 max-h-[760px] overflow-y-auto pr-1">
             {visibleChats.length === 0 ? (
               <p className="text-[13px] text-brand-graySub px-1 py-6 text-center">{copy.empty}</p>
             ) : (
@@ -687,7 +694,7 @@ export default function MessagesPage({
         </div>
 
         {activeChat && (
-          <div className="lg:col-span-8 flex flex-col rounded-3xl bg-surface-card shadow-warm-md overflow-hidden">
+          <div className="col-span-9 md:col-span-8 min-w-0 flex flex-col rounded-3xl bg-surface-card shadow-warm-md overflow-hidden">
             <ChatHeader
               chat={activeChat}
               counterpart={activeChat[theirRole]}
@@ -695,7 +702,7 @@ export default function MessagesPage({
               onViewOrder={onViewOrder}
             />
 
-            <div className="flex-1 p-6 flex flex-col gap-5 overflow-y-auto max-h-125 bg-surface-base/50">
+            <div className="flex-1 p-3 md:p-6 flex flex-col gap-5 overflow-y-auto max-h-[500px] bg-surface-base/50">
               {groupByDay(activeChat.messages).map((group) => (
                 <Fragment key={group.key}>
                   <div className="flex items-center justify-center my-2">
