@@ -5,8 +5,8 @@ import RootLayout from './components/common/RootLayout'
 import PublicLayout from './features/public/layout/PublicLayout.jsx' /* Plantilla que comparten las paginas publicas */
 import Home from './features/public/pages/Home'
 import ServiciosPage from './features/public/pages/ServiciosPage.jsx'
-/* 
 import ComoFunciona from './features/public/pages/ComoFunciona'
+/* 
 import ExplorarProductos from './features/public/pages/ExplorarProductos'
 */
 /* --------------------------Rutas de autenticación -------------------------*/
@@ -29,6 +29,9 @@ import NuevaSolicitud from './features/Cliente/Paginas/NuevaSolicitud.jsx'
 import ClienteLayout from './features/Cliente/layout/ClienteLayout.jsx'
 
 
+/* --------------------------Rutas del Admin -------------------------*/
+import DashboardAdmin from './features/admin/DashboardAdmin.jsx'
+
 const router = createBrowserRouter([
   {
     element: <RootLayout />,          // Benchy fijo en TODO (habria que ver si es lo suficientemente seguro)
@@ -39,8 +42,8 @@ const router = createBrowserRouter([
         children: [
           { path: '/', element: <Home /> },
           { path: '/servicios', element: <ServiciosPage /> },
-          /* { path: '/como-funciona', element: <ComoFunciona /> },
-          { path: '/explorarProductos', element: <ExplorarProductos /> }, */
+          { path: '/como-funciona', element: <ComoFunciona /> }, 
+         /*  { path: '/explorarProductos', element: <ExplorarProductos /> }, */ 
         ],
       },
 
@@ -52,15 +55,6 @@ const router = createBrowserRouter([
         ],
       },
   /* -------------------------------------------- Vista Cliente ------------------------------------------------------ */
-      /* ------------------------------ Perfil Privado ----------------------------------- */
-      /* ...(import.meta.env.DEV
-        ? [{
-          path: '/dev/cliente',
-          element: <ClienteLayout />, //<MakerLayout />
-          children: [
-              { index: true, element: <PerfilPrivado /> }],
-        }]
-        : []), */
 
       /* --------------------- MisSolicitudes / Nueva solicitud--------------------------- */
 
@@ -118,6 +112,26 @@ const router = createBrowserRouter([
           ],
         }]
         : []),
+
+       {
+        path: '/admin',
+        element: (
+          <RutaProtegida rol={['admin']}>
+            <DashboardAdmin />
+          </RutaProtegida>
+          
+        ),
+      },
+
+            ...(import.meta.env.DEV
+        ? [{
+          path: '/dev/admin',
+          element: <DashboardAdmin />,
+           children: [
+          ],
+          
+        }]
+        : []), 
     ],
   },
 ])
