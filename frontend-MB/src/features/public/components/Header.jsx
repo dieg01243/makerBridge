@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Explorar Productos', to: '/explorarProductos' },
   { label: 'Servicios', to: '/servicios' },
   { label: 'Cómo Funciona', to: '/como-funciona' },
 ]

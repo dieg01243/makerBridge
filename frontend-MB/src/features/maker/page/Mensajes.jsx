@@ -97,7 +97,6 @@ export const MOCK_CHATS = [
     orderCode: "#MK-9518",
     orderTitle: "Carcasa Drone FPV",
     orderFullTitle: "Carcasa Drone FPV",
-    orderSpecs: "Tolerancia requerida: ±0.2mm • Infill 40%",
     material: "PETG",
     quantity: "1 un.",
     delivery: "02 Mar",
@@ -116,7 +115,6 @@ export const MOCK_CHATS = [
     orderCode: "#MK-9402",
     orderTitle: "Soporte Dinámico",
     orderFullTitle: "Soporte dinámico",
-    orderSpecs: "Tolerancia requerida: ±0.3mm • Infill 25%",
     material: "PLA+",
     quantity: "2 un.",
     delivery: "21 Feb",
@@ -135,7 +133,6 @@ export const MOCK_CHATS = [
     orderCode: "#MK-9388",
     orderTitle: "Prototipo Carátula Médica",
     orderFullTitle: "Prototipo carátula médica",
-    orderSpecs: "Tolerancia requerida: ±0.1mm • Resina",
     material: "Resina SLA",
     quantity: "1 un.",
     delivery: "28 Feb",
@@ -154,7 +151,6 @@ export const MOCK_CHATS = [
     orderCode: "#MK-9210",
     orderTitle: "Set 10 Miniaturas RPG",
     orderFullTitle: "Set 10 miniaturas RPG",
-    orderSpecs: "Tolerancia requerida: ±0.1mm • Resina",
     material: "Resina SLA",
     quantity: "10 un.",
     delivery: "15 Feb",
@@ -174,7 +170,6 @@ export const MOCK_CHATS = [
     orderCode: "#MK-9533",
     orderTitle: "Soporte Sensor",
     orderFullTitle: "Soporte para sensor de proximidad",
-    orderSpecs: "Tolerancia requerida: ±0.2mm • Infill 60%",
     material: "ABS",
     quantity: "5 un.",
     delivery: "01 Mar",
@@ -194,7 +189,6 @@ export const MOCK_CHATS = [
     orderCode: "#MK-9101",
     orderTitle: "Prototipo Carcasa",
     orderFullTitle: "Prototipo de carcasa electrónica",
-    orderSpecs: "Tolerancia requerida: ±0.2mm • Infill 20%",
     material: "PLA",
     quantity: "2 un.",
     delivery: "30 Ene",
@@ -372,7 +366,7 @@ function ChatListItem({ chat, counterpart, unread, active, onSelect }) {
 
         <div className="hidden md:flex flex-col flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-[18px] leading-[26px] font-bold text-brand-dark truncate">{counterpart.name}</span>
+            <span className="text-[18px] leading-6.5 font-bold text-brand-dark truncate">{counterpart.name}</span>
             <span className={`font-mono text-[10px] shrink-0 ${active ? "text-brand-primary font-semibold" : "text-brand-graySub"}`}>
               {formatListTime(lastMessage.createdAt)}
             </span>
@@ -446,7 +440,6 @@ function ChatHeader({ chat, counterpart, orderButtonLabel, onViewOrder }) {
             <span className="font-mono text-xs font-bold text-brand-dark truncate">
               Pedido {chat.orderCode} • {chat.orderFullTitle}
             </span>
-            <span className="font-mono text-[10px] text-brand-graySub truncate">{chat.orderSpecs}</span>
           </div>
         </div>
 
@@ -675,7 +668,7 @@ export default function MessagesPage({
             <span className="font-mono text-[10px] text-brand-graySub">Ordenado por actividad</span>
           </div>
 
-          <div className="flex flex-col gap-2.5 max-h-[760px] overflow-y-auto pr-1">
+          <div className="flex flex-col gap-2.5 max-h-190 overflow-y-auto pr-1">
             {visibleChats.length === 0 ? (
               <p className="text-[13px] text-brand-graySub px-1 py-6 text-center">{copy.empty}</p>
             ) : (
@@ -702,7 +695,7 @@ export default function MessagesPage({
               onViewOrder={onViewOrder}
             />
 
-            <div className="flex-1 p-3 md:p-6 flex flex-col gap-5 overflow-y-auto max-h-[500px] bg-surface-base/50">
+            <div className="flex-1 p-3 md:p-6 flex flex-col gap-5 overflow-y-auto max-h-125 bg-surface-base/50">
               {groupByDay(activeChat.messages).map((group) => (
                 <Fragment key={group.key}>
                   <div className="flex items-center justify-center my-2">
