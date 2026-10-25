@@ -9,12 +9,14 @@ const navLinks = [
 
 export default function Header() {
   const navigate = useNavigate();
+
   return (
     <header className="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-md border-b border-surface-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <a
-          href="#"
+        <button
+          type="button"
+          onClick={() => navigate("/")}
           aria-label="MakerBridge Inicio"
           className="flex items-center gap-3 group focus:outline-none"
         >
@@ -30,7 +32,8 @@ export default function Header() {
               <line x1="12" x2="12" y1="22.08" y2="12" />
             </svg>
           </div>
-          <div className="flex flex-col">
+
+          <div className="flex flex-col text-left">
             <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
               MakerBridge
             </span>
@@ -38,24 +41,30 @@ export default function Header() {
               3D Printing Network
             </span>
           </div>
-        </a>
+        </button>
 
         {/* Main Navigation Menu */}
         <nav
           aria-label="Navegación principal"
           className="hidden md:flex items-center gap-1 lg:gap-2"
         >
-          <a
-            href="#"
-            aria-current="page"
-            className="px-3.5 py-2 text-sm font-semibold text-[#e06d53] relative after:content-[''] after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#e06d53] rounded-md transition-colors"
+          <button
+            type="button"
+            onClick={() => navigate("/")}
+            className="px-3.5 py-2 text-sm font-semibold text-[#e06d53] rounded-md transition-colors"
           >
             Home
-          </a>
+          </button>
+
           {navLinks.map(({ label, dot }) => (
-            <a
+            <button
               key={label}
-              href="#"
+              type="button"
+              onClick={() => {
+                if (label === "Cómo Funciona") {
+                  navigate("/ComoFunciona");
+                }
+              }}
               className={`px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-black/5 rounded-lg transition-colors ${
                 dot ? "flex items-center gap-1.5" : ""
               }`}
@@ -64,11 +73,9 @@ export default function Header() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#e06d53]" />
               )}
               {label}
-            </a>
+            </button>
           ))}
         </nav>
-
-        {/* Header CTAs */}
 
         {/* Header CTAs */}
         <div className="flex items-center gap-3">

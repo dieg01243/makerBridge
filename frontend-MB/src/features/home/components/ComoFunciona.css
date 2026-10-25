@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+.cf {
+  --accent: #e8643c;
+  font-family: "Quicksand", system-ui, sans-serif;
+  background: #fffaf5;
+  color: #2b2623;
+  min-height: 100vh;
+  padding: 24px 16px 48px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.cf * {
+  box-sizing: border-box;
+}
+.cf h1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+.cf h1 span {
+  color: var(--accent);
+}
+
+/* Divider with centered text */
+.cf-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 28px;
+  font-size: 11px;
+  color: var(--accent);
+  text-align: center;
+}
+.cf-divider::before,
+.cf-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #f3c9b8;
+}
+
+/* Cards */
+.cf-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.card {
+  width: 78%;
+  padding: 20px 22px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.55;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.card.left {
+  align-self: flex-start;
+}
+.card.right {
+  align-self: flex-end;
+}
+.card.center {
+  align-self: center;
+  width: 62%;
+}
+.card .num {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 8px;
+  float: left;
+  line-height: 1;
+  margin-top: 18px;
+}
+.card .body {
+  overflow: hidden;
+}
+.card .hl {
+  color: var(--accent);
+  font-weight: 600;
+}
+.card .hl-blue {
+  color: #3b6fd8;
+  text-decoration: underline;
+}
+.card em {
+  font-style: italic;
+}
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.pink {
+  background: #fdc7cd;
+}
+.sand {
+  background: #fbe3bd;
+}
+.sage {
+  background: #e5e8d6;
+  outline: 3px solid #1e88e5;
+  outline-offset: 3px;
+}
+.salmon {
+  background: #f8cfc2;
+}
+.slate {
+  background: #dde5e6;
+}
+.lilac {
+  background: #d9d0f0;
+}
+
+.cf-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.cf-bottom .card {
+  width: 100%;
+}
+.cf-bottom .card.full {
+  grid-column: 1 / -1;
+  width: 62%;
+  justify-self: center;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 92%;
+  }
+  .cf-bottom {
+    grid-template-columns: 1fr;
+  }
+  .cf-bottom .card.full {
+    width: 100%;
+  }
+}
