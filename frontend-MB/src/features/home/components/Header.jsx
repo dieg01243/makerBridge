@@ -69,7 +69,17 @@ export default function Header() {
         </nav>
 
         {/* Header CTAs */}
+
+        {/* Header CTAs */}
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => navigate("/dashboardAdmin")}
+            className="px-5 py-2.5 text-sm font-semibold text-white bg-[#e06d53] hover:bg-[#cc593f] rounded-xl shadow-sm transition duration-150"
+          >
+            Dashboard Admin
+          </button>
+
           <button
             type="button"
             onClick={() => navigate("/Login")}
